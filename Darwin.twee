@@ -1,0 +1,389 @@
+:: StoryTitle
+Darwin
+
+
+:: StoryData
+{
+  "ifid": "59995CAD-8CE7-4B0B-AAFE-8B5E45F07731",
+  "format": "SugarCube",
+  "format-version": "2.36.1",
+  "start": "Intro",
+  "zoom": 1
+}
+
+
+:: Cock Stoned {"position":"375,0","size":"100,100"}
+Your cock is stoned
+[[OK|Start]]
+
+
+:: Darwin {"position":"1100,100","size":"100,100"}
+<<if $is_cock_stoned eq "true">>
+[[Jerk Off]]
+<<else>>
+[[Dream about Tasha]] 
+<</if>>
+
+/*Undress*/
+<<if $is_darvin_undressed eq "false">>
+	[[Undress]]
+<<else>>
+	[[Muscle Play]]
+<</if>>
+
+/*Show ass*/
+
+[[Do nothing]]
+
+
+:: Do nothing {"position":"250,225","size":"100,100"}
+Do nothing
+[[OK|Start]] 
+
+<<set $moves += 1>>
+
+
+:: Dream about Tasha {"position":"500,0","size":"100,100"}
+<<if $dream_base eq 0>>
+You imagine naked Tasha
+<<else>>
+You imagine sex with Tasha
+<</if>>
+
+<<set $moves += 1>>
+<<set $dream_base += 1>>
+
+<<if $dream_base eq 2  & $is_cock_stoned eq "false">>
+<<set $is_cock_stoned = "true">>
+	[[OK|Cock Stoned]] 
+<<else>>
+	[[OK|Start]] 
+<</if>>
+
+
+:: Game Over: Emotion {"position":"750,675","size":"100,100"}
+Game Over
+
+She is angry
+
+[[Try again|Intro]]
+
+
+:: Game Over: Moves {"position":"600,675","size":"100,100"}
+Game Over
+
+It's too late, she went home
+
+[[Try again|Intro]]
+
+
+:: Game Over: Termo {"position":"400,675","size":"100,100"}
+Game Over
+
+She felt sick and went home
+
+[[Try again|Intro]]
+
+
+:: Intro {"position":"525,850","size":"100,100"}
+Intro is here
+
+[[Start]] 
+
+/*Tasha*/
+<<set $emotion = 5>>
+<<set $emotion_game_over = 1>>
+<<set $is_undressed = "false" >>
+<<set $has_massage = "false">>
+
+/*Darwin*/
+<<set $dream_base = 0>>
+<<set $dream_max = 2>>
+<<set $is_cock_stoned = "false">>
+<<set $is_darvin_undressed = "false">>
+<<set $has_played_muscles = "false">>
+<<set $has_showed_butt = "false">>
+
+/* Temperature min = 10, max = 30, step is termo_step */
+<<set $termo_base = 20>>
+<<set $termo = $termo_base>>
+<<set $termo_step = 5>>
+<<set $termo_min = 15>>
+<<set $termo_max = 30>>
+<<set $game_over_termo_move = -1>>
+<<set $termo_undress_move = -1>>
+<<set $is_termo_enabled = "true">>
+
+
+/*disable the termo if exceeded*/
+<<set $termo_counter = 0 >>
+<<set $termo_max_counter = 3 >>
+
+<<set $moves = 0>>
+<<set $max_moves = 99>>
+
+
+:: Jerk Off {"position":"1325,500","size":"100,100"}
+<<set $moves += 1>>
+
+<<if $emotion lte 8>>
+	She went angry
+	[[Game Over: Emotion]] 
+<<else>>
+	<<set $emotion += 1>>
+	[[Scene Jerk Off]] 
+<</if>>
+
+
+:: Lift Books {"position":"1075,250","size":"100,100"}
+<img src="https://phonoteka.org/uploads/posts/2023-03/1679581273_phonoteka-org-p-stopka-knig-foni-vkontakte-9.jpg"  width="400px">
+
+I may demonstrate my body using these books
+
+[[OK|Show Butt]] 
+
+
+:: Massage {"position":"950,350","size":"100,100"}
+<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
+
+<<if $is_undressed eq "true">>
+	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
+    <<else>>
+    <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
+<</if>>
+
+<<set $moves += 1>>
+
+
+
+
+<<if $emotion gt 5 & $is_undressed eq "true" & $has_massage eq "false" >>
+	<<set $emotion += 1>>
+    <<set $has_massage = "true">>
+	She likes it.
+<<else>>
+	She ignores it.
+<</if>>
+
+[[OK|Start]]
+
+
+
+:: Muscle Play {"position":"1250,125","size":"100,100"}
+<img src ="https://avz-clinic.com/wp-content/uploads/2019/07/news_17-min.jpg">
+You have played with your muscles.
+
+<<set $moves += 1>>
+
+
+<<if  $has_played_muscles eq "false">>
+	<<set $has_played_muscles = "true">>
+	<<set $emotion += 1>>
+    She likes it.
+<<else>>
+	Looks like she ignores you.
+<</if>>    
+    
+[[OK|Start]] 
+
+
+:: Scene Jerk Off {"position":"1150,425","size":"100,100"}
+<img  src="https://lh3.googleusercontent.com/d/1e6ozN_dIQk6GAdVbukRCioM3meQmqtzf">
+
+Scene Blow
+
+
+[[OK|Start]]
+
+
+:: Show Butt {"position":"1275,250","size":"100,100"}
+<img src="https://tagrey.files.wordpress.com/2013/10/bigstock-young-man-in-jeans-standing-fa-7625193.jpg"  width="400px">
+
+<<set $moves += 1>>
+
+<<if  $has_showed_butt eq "false">>
+	<<set $has_showed_butt = "true">>
+	<<set $emotion += 1>>
+    She likes it.
+<<else>>
+	Looks like she ignores you.
+<</if>> 
+
+[[OK|Start]] 
+
+
+:: Start {"position":"525,375","size":"100,100"}
+Start
+
+<<if $termo_counter eq $termo_max_counter & $is_termo_enabled eq "true">>
+She noticed your actions against the controller and switched it off
+  <<set $status.push("Termo_Disabled") >>
+  <<set $is_termo_enabled = "false">>
+  /*reset all termo statuses*/
+  <<set $termo_undress_move = -1>>
+  <<set $game_over_termo_move = -1>>
+<</if>>
+
+<<if $termo_undress_move eq $moves>>
+<<set $is_undressed = "true" >>
+<</if>>
+
+/*Tasha*/
+/*Body*/
+<img class="tasha" src="https://lh3.googleusercontent.com/d/109WMqo32htdvArOATsXZwSj_KxH5q1VL">
+
+/*Dress*/
+<<if $is_undressed eq "true">>
+	<img  class="tasha" src="https://lh3.googleusercontent.com/d/1MO0ATuZpG9h3vrwNFSw2I7atiFiaqdf6">
+<<else>>
+	<img  class="tasha" src="https://lh3.googleusercontent.com/d/11Qy-wv2yp19ZxZboZR99XU1GmBq4ZVpH">
+<</if>>
+
+/*Only for text, there is the same if above*/
+<<if $termo_undress_move eq $moves>>
+	It's really hot here. Tasha took off her jacket.
+<</if>>
+
+<<if $moves lte $max_moves>>
+	<<if $game_over_termo_move eq $moves >>
+    	[[Game Over: Termo]] 
+	<<else>>
+        	<<if $emotion gt $emotion_game_over >>
+              	<<if $is_termo_enabled eq "true">>
+        			[[Inspect air conditioner controller|Termo]]
+        	  	<</if>>
+              	<<if $has_showed_butt eq "false">>
+        			[[Lift Books]]
+        	 	 <</if>>
+              [[Interact Tasha|Tasha]]
+              [[Look at yourself|Darwin]]
+              [[Do nothing]]
+             <<else>>
+             [[Game Over: Emotion]] 
+             <</if>>
+    <</if>>
+<<else>>
+[[Game Over: Moves]] 
+<</if>>
+
+<<if $emotion lte 3>>
+/*Face Angry*/
+<img  class="tasha" src="https://lh3.googleusercontent.com/d/1J_eWoUQkUsd4VRyra9cS_YVT4_Y28pjx">
+<</if>>
+
+<<if $emotion gt 3 & $emotion lte 5 >>
+/*Face Neutral*/
+<img  class="tasha" src="https://lh3.googleusercontent.com/d/1SFc4eTMSLZJXU4GNEbLLkFza7iDgVMPA">
+<</if>>
+
+<<if $emotion gt 5 & $emotion lte 8 >>
+/*Face Happy*/
+<img  class="tasha" src="https://lh3.googleusercontent.com/d/1VEgNQf8sqqj6PcKxP9AdJU4Y2Zkr_fOn">
+<</if>>
+
+<<if $emotion gt 8 >>
+/*Face Horny*/
+<img  class="tasha" src="https://lh3.googleusercontent.com/d/1TsY9nIuh7EUTonvuOtWwl0kQuR4dzdUG">
+<</if>>
+
+/*******/
+
+
+:: Tasha {"position":"775,425","size":"100,100"}
+[[Massage]]
+[[Do nothing]]
+
+
+:: Termo {"position":"75,400","size":"100,100"}
+Air conditioner controller.
+
+<<if $termo gt $termo_min>>
+[[Decrease the temperature|Termo Decrease]] 
+<<else>>
+Temperature is on minimum
+<</if>>
+
+<<if $termo lt $termo_max>>
+[[Increase the temperature|Termo Increase]]
+<<else>>
+Temperature is on maximum
+<</if>>
+
+[[Do nothing]] 
+
+<img src="https://cdn21vek.by/img/galleries/6117/195/preview_b/r300b510575_rexant_5f6481cc6e653.jpeg">
+
+
+:: Termo Decrease {"position":"225,625","size":"100,100"}
+You have decreased the temperature at controller.
+It requers some time to take an effect.
+
+[[OK|Start]] 
+
+<img src="https://cdn21vek.by/img/galleries/6117/195/preview_b/r300b510575_rexant_5f6481cc6e653.jpeg">
+
+<<set $termo = $termo - $termo_step>>
+<<set $moves += 1>>
+<<set $termo_counter += 1>>
+
+/*Reset undress event  */
+<<if $termo lte $termo_base>>
+	<<set $termo_undress_move = -1>>
+<</if>>
+
+/*reset the game over flag*/
+<<set $game_over_termo_move = -1>>
+
+
+:: Termo Increase {"position":"75,625","size":"100,100"}
+You have increased the temperature at controller.
+It requers some time to take an effect.
+
+[[OK|Start]] 
+
+<img src="https://cdn21vek.by/img/galleries/6117/195/preview_b/r300b510575_rexant_5f6481cc6e653.jpeg">
+
+<<set $moves += 1>>
+<<set $termo_counter += 1>>
+
+<<set $termo = $termo + $termo_step>>
+
+/*Trigger undress event after some moves, not immediate */
+<<if $termo gt $termo_base>>
+  <<set $termo_undress_move = $moves + either(2,3)>>
+<</if>>
+
+/*Trigger game over after some moves, not immediate*/
+<<if $termo eq $termo_max>>
+  /*game over after random 2,3 moves*/
+  <<set $game_over_termo_move = $moves + either(2,3)>>
+  
+  /*reset Undress event*/
+  <<set $termo_undress_move = -1>>
+<</if>>
+
+
+:: Undress {"position":"1250,0","size":"100,100"}
+<img src ="https://avz-clinic.com/wp-content/uploads/2019/07/news_17-min.jpg">
+You showed breast
+
+<<set $moves += 1>>
+<<set $is_darvin_undressed = "true">>
+
+<<if $is_undressed eq "true">>
+	She likes it.
+	<<set $emotion += 1>>
+<<else>>
+	She doesn't like it
+	<<set $emotion -= 1>>
+<</if>>
+
+[[OK|Start]] 
+
+
+:: StoryStylesheet [stylesheet]
+.tasha {
+  position: absolute;
+  top: 0;
+  left: 500px;
+}
