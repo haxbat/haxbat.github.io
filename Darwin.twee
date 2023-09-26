@@ -17,6 +17,30 @@ Your cock is stoned
 [[OK|Start]]
 
 
+:: Cum ass in {"position":"1675,900","size":"100,100"}
+<img height="500px" src="https://lh3.googleusercontent.com/d/1RVsL4JxJUk2fUnVmtBq7g7rJZ6qD9dGA">
+
+[[OK|End Game]]
+
+
+:: Cum ass out {"position":"1850,900","size":"100,100"}
+<img height="500px" src="https://lh3.googleusercontent.com/d/1y_3CuYYn6o2rv1AzJHo4nmynDZUtwUIw">
+
+[[OK|End Game]]
+
+
+:: Cum pussy in {"position":"1400,900","size":"100,100"}
+<img height="500px" src="https://lh3.googleusercontent.com/d/1cmZd7jvqGW5HXMIWI4ijd81i0z8gcVXu">
+
+[[OK|End Game]]
+
+
+:: Cum pussy out {"position":"1550,900","size":"100,100"}
+<img height="500px" src="https://lh3.googleusercontent.com/d/1IWpfLzui6u-blovoN_9LQHcV6QlEdg26">
+
+[[OK|End Game]]
+
+
 :: Darwin {"position":"1100,100","size":"100,100"}
 <<if $is_cock_stoned eq "true">>
 [[Jerk Off]]
@@ -61,6 +85,39 @@ You imagine sex with Tasha
 <</if>>
 
 
+:: End Game {"position":"1500,1175","size":"100,100"}
+<img height="500px" src="https://lh3.googleusercontent.com/d/1r6um-4kRtsLDCUHcXcaiLLqQQ1VZ5oK7">
+
+
+You win!
+
+[[Try again|Intro]]
+
+
+:: Fuck Ass {"position":"1750,775","size":"100,100"}
+<<set $moves += 1>>
+<<set $emotion += 1>>
+
+<img height="500px" src="https://lh3.googleusercontent.com/d/1ORAJDI-gTndcF15Ehyb2hj-1kAQTBW8r">
+
+
+
+[[Cum in|Cum ass in]]
+[[Cum out|Cum ass out]]
+
+
+:: Fuck Pussy {"position":"1475,775","size":"100,100"}
+<<set $moves += 1>>
+<<set $emotion += 1>>
+
+<img height="500px" src="https://lh3.googleusercontent.com/d/1OxRbggmR5mZjy3kNloutsJcs2kmvwhaz">
+
+
+
+[[Cum in|Cum pussy in]]
+[[Cum out|Cum pussy out]]
+
+
 :: Game Over: Emotion {"position":"750,675","size":"100,100"}
 Game Over
 
@@ -93,16 +150,21 @@ Intro is here
 /*Tasha*/
 <<set $emotion = 5>>
 <<set $emotion_game_over = 1>>
+<<set $emotion_neutral = 3>>
+<<set $emotion_happy = 6>>
+<<set $emotion_horny = 9>>
 <<set $is_undressed = "false" >>
 <<set $has_massage = "false">>
+<<set $has_panties = "true">>
 
 /*Darwin*/
 <<set $dream_base = 0>>
 <<set $dream_max = 2>>
 <<set $is_cock_stoned = "false">>
 <<set $is_darvin_undressed = "false">>
-<<set $has_played_muscles = "false">>
+<<set $num_played_muscles = 0>>
 <<set $has_showed_butt = "false">>
+<<set $dominance = 0>>
 
 /* Temperature min = 10, max = 30, step is termo_step */
 <<set $termo_base = 20>>
@@ -126,13 +188,24 @@ Intro is here
 :: Jerk Off {"position":"1325,500","size":"100,100"}
 <<set $moves += 1>>
 
-<<if $emotion lte 8>>
+<<if $emotion lt $emotion_horny>>
 	She went angry
-	[[Game Over: Emotion]] 
+	<<set $emotion -= 3>>
+    [[OK|Start]]
 <<else>>
 	<<set $emotion += 1>>
 	[[Scene Jerk Off]] 
 <</if>>
+
+
+:: Lick Pussy {"position":"1300,775","size":"100,100"}
+<img height="500px" src="https://lh3.googleusercontent.com/d/1vfOYjBbIABxzDHa1mCGv9EzvYfpRamXj">
+<<set $moves += 1>>
+<<set $emotion += 1>>
+
+
+
+[[OK|Start]]
 
 
 :: Lift Books {"position":"1075,250","size":"100,100"}
@@ -143,7 +216,9 @@ I may demonstrate my body using these books
 [[OK|Show Butt]] 
 
 
-:: Massage {"position":"950,350","size":"100,100"}
+:: Massage {"position":"950,300","size":"100,100"}
+<img height="300px" src="https://files.g8ozdcdn.com/wp-content/uploads/2019/09/e395758cf11b4c5a6b570eea82165e9c.jpeg" >
+/*
 <img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
 
 <<if $is_undressed eq "true">>
@@ -151,18 +226,25 @@ I may demonstrate my body using these books
     <<else>>
     <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
 <</if>>
-
+*/
 <<set $moves += 1>>
 
 
 
+<<if $emotion gte $emotion_happy & $is_undressed eq "true" & $has_massage eq "true" >>
+	No reaction. Try something new.
+<</if>>
 
-<<if $emotion gt 5 & $is_undressed eq "true" & $has_massage eq "false" >>
+<<if $emotion gte $emotion_happy & $is_undressed eq "true" & $has_massage eq "false" >>
 	<<set $emotion += 1>>
     <<set $has_massage = "true">>
 	She likes it.
-<<else>>
-	She ignores it.
+<</if>>
+
+
+<<if $emotion lt $emotion_happy>>
+	<<set $emotion -= 1>>
+	She doesn't like it
 <</if>>
 
 [[OK|Start]]
@@ -176,18 +258,30 @@ You have played with your muscles.
 <<set $moves += 1>>
 
 
-<<if  $has_played_muscles eq "false">>
-	<<set $has_played_muscles = "true">>
+<<if  $num_played_muscles lte 2>>
+	<<set $num_played_muscles += 1>>
 	<<set $emotion += 1>>
     She likes it.
 <<else>>
-	Looks like she ignores you.
+	Looks like she ignores you. Try something new.
 <</if>>    
     
 [[OK|Start]] 
 
 
-:: Scene Jerk Off {"position":"1150,425","size":"100,100"}
+:: Rip panties {"position":"950,650","size":"100,100"}
+<img  height="700px" src="https://lh3.googleusercontent.com/d/10viPsCQEbjsFMlW_YfOTUN55MFjiN01E">
+
+<<set $moves += 1>>
+<<set $dominance += 1>>
+<<set $has_panties = "false">>
+
+You have ripped her panties.
+
+[[OK|Start]]
+
+
+:: Scene Jerk Off {"position":"1125,425","size":"100,100"}
 <img  src="https://lh3.googleusercontent.com/d/1e6ozN_dIQk6GAdVbukRCioM3meQmqtzf">
 
 Scene Blow
@@ -196,7 +290,7 @@ Scene Blow
 [[OK|Start]]
 
 
-:: Show Butt {"position":"1275,250","size":"100,100"}
+:: Show Butt {"position":"1250,250","size":"100,100"}
 <img src="https://tagrey.files.wordpress.com/2013/10/bigstock-young-man-in-jeans-standing-fa-7625193.jpg"  width="400px">
 
 <<set $moves += 1>>
@@ -256,7 +350,7 @@ She noticed your actions against the controller and switched it off
         			[[Lift Books]]
         	 	 <</if>>
               [[Interact Tasha|Tasha]]
-              [[Look at yourself|Darwin]]
+              [[Interact Darwin|Darwin]]
               [[Do nothing]]
              <<else>>
              [[Game Over: Emotion]] 
@@ -266,22 +360,22 @@ She noticed your actions against the controller and switched it off
 [[Game Over: Moves]] 
 <</if>>
 
-<<if $emotion lte 3>>
+<<if $emotion lt $emotion_neutral>>
 /*Face Angry*/
 <img  class="tasha" src="https://lh3.googleusercontent.com/d/1J_eWoUQkUsd4VRyra9cS_YVT4_Y28pjx">
 <</if>>
 
-<<if $emotion gt 3 & $emotion lte 5 >>
+<<if $emotion gte $emotion_neutral & $emotion lt $emotion_happy >>
 /*Face Neutral*/
 <img  class="tasha" src="https://lh3.googleusercontent.com/d/1SFc4eTMSLZJXU4GNEbLLkFza7iDgVMPA">
 <</if>>
 
-<<if $emotion gt 5 & $emotion lte 8 >>
+<<if $emotion gte $emotion_happy & $emotion lt $emotion_horny >>
 /*Face Happy*/
 <img  class="tasha" src="https://lh3.googleusercontent.com/d/1VEgNQf8sqqj6PcKxP9AdJU4Y2Zkr_fOn">
 <</if>>
 
-<<if $emotion gt 8 >>
+<<if $emotion gte $emotion_horny >>
 /*Face Horny*/
 <img  class="tasha" src="https://lh3.googleusercontent.com/d/1TsY9nIuh7EUTonvuOtWwl0kQuR4dzdUG">
 <</if>>
@@ -289,8 +383,30 @@ She noticed your actions against the controller and switched it off
 /*******/
 
 
+:: Take off panties {"position":"1075,650","size":"100,100"}
+<img  height="700px" src="https://lh3.googleusercontent.com/d/10viPsCQEbjsFMlW_YfOTUN55MFjiN01E">
+
+<<set $moves += 1>>
+<<set $has_panties = "false">>
+
+You have took off her panties.
+
+[[OK|Start]]
+
+
 :: Tasha {"position":"775,425","size":"100,100"}
-[[Massage]]
+<<if $is_undressed eq "true">>
+	[[Massage]]
+<</if>>
+
+<<if $has_panties eq "true">>
+	[[Touch panties]]
+<<else>>
+	[[Lick Pussy]]
+    [[Fuck Pussy]]
+    [[Fuck Ass]]
+<</if>>
+
 [[Do nothing]]
 
 
@@ -360,6 +476,44 @@ It requers some time to take an effect.
   
   /*reset Undress event*/
   <<set $termo_undress_move = -1>>
+<</if>>
+
+
+:: To Do {"position":"50,50","size":"100,100"}
++unlim muscle play if emotion <=5
++ Massage nums
+
+FPV?
+
+Undress2
+Tune moves
+
+Stoned dick
+
+
+:: Touch panties {"position":"950,500","size":"100,100"}
+<<set $moves += 1>>
+
+<<if $emotion lt $emotion_horny>>
+  <img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
+
+  <<if $is_undressed eq "true">>
+      <img class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
+  <<else>>
+        <img class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
+  <</if>>
+  
+  
+  
+	She doesn't like it
+	<<set $emotion -= 2>>
+    [[OK|Start]]
+<<else>>
+	<<set $emotion += 1>>
+	<img width=300px src="https://www.bigw.com.au/medias/sys_master/images/images/hfc/h64/44246116171806.jpg">
+    [[Rip panties]]
+    [[Take off panties]]
+    [[Do nothing|Start]]
 <</if>>
 
 
