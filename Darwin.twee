@@ -12,30 +12,41 @@ Darwin
 }
 
 
-:: Cock Stoned {"position":"375,0","size":"100,100"}
-Your cock is stoned
+:: Blow job {"position":"1500,250","size":"100,100"}
+<img src="https://lh3.googleusercontent.com/d/1ke4CCQYt4QY9yG-Udv6XIgmWmx-eJ-Xd">
+
+She is sucking your dick
+
 [[OK|Start]]
 
 
-:: Cum ass in {"position":"1675,900","size":"100,100"}
+:: Cock Stoned {"position":"375,0","size":"100,100"}
+<img height="300px" src="https://sun9-5.userapi.com/impf/c639524/v639524246/4cdad/EKJTNipJt5Q.jpg?size=1280x1275&quality=96&sign=63253eefab5f408288979ab081dac4cf&c_uniq_tag=xPjVqwsWsjoZR0rxu6eQT5TfRE-9lSJZLoHfnJGv130&type=album">
+
+Your cock is stoned
+
+[[OK|Start]]
+
+
+:: Cum ass in {"position":"1800,950","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1RVsL4JxJUk2fUnVmtBq7g7rJZ6qD9dGA">
 
 [[OK|End Game]]
 
 
-:: Cum ass out {"position":"1850,900","size":"100,100"}
+:: Cum ass out {"position":"1975,950","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1y_3CuYYn6o2rv1AzJHo4nmynDZUtwUIw">
 
 [[OK|End Game]]
 
 
-:: Cum pussy in {"position":"1400,900","size":"100,100"}
+:: Cum pussy in {"position":"1525,950","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1cmZd7jvqGW5HXMIWI4ijd81i0z8gcVXu">
 
 [[OK|End Game]]
 
 
-:: Cum pussy out {"position":"1550,900","size":"100,100"}
+:: Cum pussy out {"position":"1675,950","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1IWpfLzui6u-blovoN_9LQHcV6QlEdg26">
 
 [[OK|End Game]]
@@ -85,7 +96,7 @@ You imagine sex with Tasha
 <</if>>
 
 
-:: End Game {"position":"1500,1175","size":"100,100"}
+:: End Game {"position":"1750,1200","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1r6um-4kRtsLDCUHcXcaiLLqQQ1VZ5oK7">
 
 
@@ -94,8 +105,22 @@ You win!
 [[Try again|Intro]]
 
 
-:: Fuck Ass {"position":"1750,775","size":"100,100"}
-<<set $moves += 1>>
+:: EnergyDrink {"position":"175,1000","size":"100,100"}
+<img height="500px" src="https://www.fmcgbusiness.co.nz/wp-content/uploads/2015/08/rsz_16dksh_and_red-bull-energy-drink-can-nz-open.jpg">
+
+
+<<if $has_valocordin eq "true">>
+	You may poor the Valocardin into the Energy Drink
+	[[Pour a little|PourLittle]]
+    [[Pour half|PourHalf]]
+<</if>>
+
+
+[[Do nothing]]
+
+
+
+:: Fuck Ass {"position":"1875,825","size":"100,100"}
 <<set $emotion += 1>>
 
 <img height="500px" src="https://lh3.googleusercontent.com/d/1ORAJDI-gTndcF15Ehyb2hj-1kAQTBW8r">
@@ -106,7 +131,48 @@ You win!
 [[Cum out|Cum ass out]]
 
 
-:: Fuck Pussy {"position":"1475,775","size":"100,100"}
+:: Fuck Ass Check {"position":"1825,400","size":"100,100"}
+<img height="500px" src="https://lh3.googleusercontent.com/d/1XG0Q0IhXipMK6Bt0YW7D6Bb1AM0nHspy">
+
+<<set $moves += 1>>
+
+You are trying to get her from behind
+
+<<if  $dominance gte $dominance_anal>>
+	[[Fuck Ass]] 
+<<else>>
+	[[Fuck Ass|Fuck Ass Reject]] 
+<</if>>
+
+
+:: Fuck Ass Reject {"position":"1625,550","size":"100,100"}
+<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
+
+<<if $is_undressed eq "true">>
+	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
+    <<else>>
+    <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
+<</if>>
+
+<<set $emotion -= 1>>
+
+
+
+Tasha rejects
+
+[[OK|Start]]
+
+
+:: Fuck Face {"position":"1500,125","size":"100,100"}
+<img  src="https://lh3.googleusercontent.com/d/1e6ozN_dIQk6GAdVbukRCioM3meQmqtzf">
+
+Scene Blow
+<<set $dominance += 1>>
+
+[[OK|Start]]
+
+
+:: Fuck Pussy {"position":"1600,825","size":"100,100"}
 <<set $moves += 1>>
 <<set $emotion += 1>>
 
@@ -118,7 +184,9 @@ You win!
 [[Cum out|Cum pussy out]]
 
 
-:: Game Over: Emotion {"position":"750,675","size":"100,100"}
+:: Game Over: Emotion {"position":"650,675","size":"100,100"}
+<img height="500px" src="https://lh3.googleusercontent.com/d/1Xnigb8nq425eU6RXxhlXOEXkPJQQ-zdW">
+
 Game Over
 
 She is angry
@@ -126,7 +194,9 @@ She is angry
 [[Try again|Intro]]
 
 
-:: Game Over: Moves {"position":"600,675","size":"100,100"}
+:: Game Over: Moves {"position":"525,675","size":"100,100"}
+<img height="500px" src="https://lh3.googleusercontent.com/d/1Xnigb8nq425eU6RXxhlXOEXkPJQQ-zdW">
+
 Game Over
 
 It's too late, she went home
@@ -135,6 +205,8 @@ It's too late, she went home
 
 
 :: Game Over: Termo {"position":"400,675","size":"100,100"}
+<img height="500px" src="https://lh3.googleusercontent.com/d/1Xnigb8nq425eU6RXxhlXOEXkPJQQ-zdW">
+
 Game Over
 
 She felt sick and went home
@@ -142,8 +214,20 @@ She felt sick and went home
 [[Try again|Intro]]
 
 
-:: Intro {"position":"525,850","size":"100,100"}
-Intro is here
+:: Game Over: Valocordin {"position":"775,675","size":"100,100"}
+<img height="500px" src="https://lh3.googleusercontent.com/d/1Xnigb8nq425eU6RXxhlXOEXkPJQQ-zdW">
+
+Game Over
+
+She felt sleepy and went home.
+
+[[Try again|Intro]]
+
+
+:: Intro {"position":"525,875","size":"100,100"}
+Полярная экспедиция нашла в Антарктиде оледенелое тело древнего человека. По внешнему виду сложно было определить, из какого он периода. Замерзший был похож на современного человека, но намного крупнее. Его транспортировали в научно-исследовательский институт и поместили в камеру для разморозки. Когда он очнулся, ученые окрестили его Дарвином. Мужчина не мог говорить и не понимал человеческую речь. Вел себя агрессивно, пытался сбежать из лаборатории, поэтому его поместили в клетку и часто кололи успокоительное. У Дарвина взяли кучу анализов и для изучения пригласили ученую-антрополога. Когда она впервые подошла к клетке, подопытный успокоился. Глава института понял, что женщина благотворно влияет на Дарвина, и поручил Таше возглавить исследование. 
+
+Поздний вечер. Таша до сих пор в лаборатории. На ее столе стоят микроскоп, разные реагенты, баночки с лекарствами, пробирки, компьютер, баночка энергетика. Дарвин находится рядом в открытой клетке.
 
 [[Start]] 
 
@@ -156,6 +240,7 @@ Intro is here
 <<set $is_undressed = "false" >>
 <<set $has_massage = "false">>
 <<set $has_panties = "true">>
+<<set $has_energy_drink = "true">>
 
 /*Darwin*/
 <<set $dream_base = 0>>
@@ -165,6 +250,15 @@ Intro is here
 <<set $num_played_muscles = 0>>
 <<set $has_showed_butt = "false">>
 <<set $dominance = 0>>
+<<set $dominance_anal = 2>>
+<<set $has_valocordin = "false">>
+
+/*EnergyDrink*/
+<<set $has_pour_half = "false">>
+<<set $has_pour_little = "false">>
+<<set $game_over_valocordin = -1>>
+<<set $valocordin_boost = -1>>
+
 
 /* Temperature min = 10, max = 30, step is termo_step */
 <<set $termo_base = 20>>
@@ -182,10 +276,14 @@ Intro is here
 <<set $termo_max_counter = 3 >>
 
 <<set $moves = 0>>
-<<set $max_moves = 99>>
+<<set $max_moves = 17>>
 
 
-:: Jerk Off {"position":"1325,500","size":"100,100"}
+:: Jerk Off {"position":"1725,225","size":"100,100"}
+<img height="500px" src="https://lh3.googleusercontent.com/d/1AnAVpiMOxdT6JiczrBNgF0ec_HywKAo-">
+
+She is waiting for your next move
+
 <<set $moves += 1>>
 
 <<if $emotion lt $emotion_horny>>
@@ -193,17 +291,18 @@ Intro is here
 	<<set $emotion -= 3>>
     [[OK|Start]]
 <<else>>
-	<<set $emotion += 1>>
-	[[Scene Jerk Off]] 
+	<<set $emotion += 1>>   
+	[[Fuck Face]]    
+    [[Blow job]]    
+    [[Do nothing|Start]]
 <</if>>
 
 
-:: Lick Pussy {"position":"1300,775","size":"100,100"}
+:: Lick Pussy {"position":"1300,750","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1vfOYjBbIABxzDHa1mCGv9EzvYfpRamXj">
 <<set $moves += 1>>
 <<set $emotion += 1>>
-
-
+<<set $is_cock_stoned = "true">>
 
 [[OK|Start]]
 
@@ -216,7 +315,7 @@ I may demonstrate my body using these books
 [[OK|Show Butt]] 
 
 
-:: Massage {"position":"950,300","size":"100,100"}
+:: Massage {"position":"925,300","size":"100,100"}
 <img height="300px" src="https://files.g8ozdcdn.com/wp-content/uploads/2019/09/e395758cf11b4c5a6b570eea82165e9c.jpeg" >
 /*
 <img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
@@ -251,6 +350,16 @@ I may demonstrate my body using these books
 
 
 
+:: MedKit {"position":"375,1000","size":"100,100"}
+<img height="500px" src="https://www.medshop.com.my/cdn/shop/products/ELI00027_Elite_Bags_KIDLE_S_the_waist_leg_first-aid_kit_open_700x700.jpg">
+
+You have found some drugs there.
+
+[[Take Valocordin|TakeValocordin]]
+
+[[Do nothing]]
+
+
 :: Muscle Play {"position":"1250,125","size":"100,100"}
 <img src ="https://avz-clinic.com/wp-content/uploads/2019/07/news_17-min.jpg">
 You have played with your muscles.
@@ -269,7 +378,35 @@ You have played with your muscles.
 [[OK|Start]] 
 
 
-:: Rip panties {"position":"950,650","size":"100,100"}
+:: PourHalf {"position":"75,1125","size":"100,100"}
+<img height="500px" src="https://www.fmcgbusiness.co.nz/wp-content/uploads/2015/08/rsz_16dksh_and_red-bull-energy-drink-can-nz-open.jpg">
+
+You have poured half of Valocordin into Energy Drink bottle.
+<<set $moves += 1>>
+<<set $has_valocordin eq "false">>
+<<set $has_pour_half eq "true">>
+
+  /*game over after random 2,3 moves*/
+  <<set $game_over_valocordin = $moves + either(2,3)>>
+
+[[OK|TashaDrinks]]
+
+
+:: PourLittle {"position":"275,1125","size":"100,100"}
+<img height="500px" src="https://www.fmcgbusiness.co.nz/wp-content/uploads/2015/08/rsz_16dksh_and_red-bull-energy-drink-can-nz-open.jpg">
+
+You have a little of Valocordin into Energy Drink bottle.
+<<set $moves += 1>>
+<<set $has_valocordin eq "false">>
+<<set $has_pour_little eq "true">>
+
+  /*boost emotion after random 2,3 moves*/
+  <<set $valocordin_boost = $moves + either(2,3)>>
+
+[[OK|TashaDrinks]]
+
+
+:: Rip panties {"position":"925,775","size":"100,100"}
 <img  height="700px" src="https://lh3.googleusercontent.com/d/10viPsCQEbjsFMlW_YfOTUN55MFjiN01E">
 
 <<set $moves += 1>>
@@ -277,15 +414,6 @@ You have played with your muscles.
 <<set $has_panties = "false">>
 
 You have ripped her panties.
-
-[[OK|Start]]
-
-
-:: Scene Jerk Off {"position":"1125,425","size":"100,100"}
-<img  src="https://lh3.googleusercontent.com/d/1e6ozN_dIQk6GAdVbukRCioM3meQmqtzf">
-
-Scene Blow
-
 
 [[OK|Start]]
 
@@ -307,21 +435,16 @@ Scene Blow
 
 
 :: Start {"position":"525,375","size":"100,100"}
-Start
-
 <<if $termo_counter eq $termo_max_counter & $is_termo_enabled eq "true">>
 She noticed your actions against the controller and switched it off
-  <<set $status.push("Termo_Disabled") >>
   <<set $is_termo_enabled = "false">>
   /*reset all termo statuses*/
   <<set $termo_undress_move = -1>>
   <<set $game_over_termo_move = -1>>
 <</if>>
-
 <<if $termo_undress_move eq $moves>>
 <<set $is_undressed = "true" >>
 <</if>>
-
 /*Tasha*/
 /*Body*/
 <img class="tasha" src="https://lh3.googleusercontent.com/d/109WMqo32htdvArOATsXZwSj_KxH5q1VL">
@@ -337,24 +460,37 @@ She noticed your actions against the controller and switched it off
 <<if $termo_undress_move eq $moves>>
 	It's really hot here. Tasha took off her jacket.
 <</if>>
-
 <<if $moves lte $max_moves>>
 	<<if $game_over_termo_move eq $moves >>
     	[[Game Over: Termo]] 
 	<<else>>
-        	<<if $emotion gt $emotion_game_over >>
-              	<<if $is_termo_enabled eq "true">>
-        			[[Inspect air conditioner controller|Termo]]
-        	  	<</if>>
-              	<<if $has_showed_butt eq "false">>
-        			[[Lift Books]]
-        	 	 <</if>>
-              [[Interact Tasha|Tasha]]
-              [[Interact Darwin|Darwin]]
+        <<if $emotion gt $emotion_game_over >>
+            <<if $game_over_valocordin eq $moves >>
+                [[Game Over: Valocordin]] 
+            <<else>>            
+                /*Check boost*/
+                <<if $valocordin_boost eq $moves>>
+                    <<set $emotion += 1 >>
+                <</if>>
+                <<if $is_termo_enabled eq "true">>
+                    [[Inspect air conditioner controller|Termo]]
+                <</if>>
+                <<if $has_showed_butt eq "false">>
+                    [[Lift Books]]
+                <</if>>
+                [[Interact Tasha|Tasha]]
+                [[Interact Darwin|Darwin]]
+                <<if $has_valocordin eq "false">>
+                    [[Inspect Medical Kit|MedKit]]
+                <</if>>
+                <<if $has_energy_drink eq "true">>
+                    [[Interact with Energy Drink|EnergyDrink]]
+                <</if>>
               [[Do nothing]]
-             <<else>>
-             [[Game Over: Emotion]] 
-             <</if>>
+            <</if>>
+        <<else>>
+            [[Game Over: Emotion]] 
+        <</if>>
     <</if>>
 <<else>>
 [[Game Over: Moves]] 
@@ -383,7 +519,7 @@ She noticed your actions against the controller and switched it off
 /*******/
 
 
-:: Take off panties {"position":"1075,650","size":"100,100"}
+:: Take off panties {"position":"1075,775","size":"100,100"}
 <img  height="700px" src="https://lh3.googleusercontent.com/d/10viPsCQEbjsFMlW_YfOTUN55MFjiN01E">
 
 <<set $moves += 1>>
@@ -392,6 +528,17 @@ She noticed your actions against the controller and switched it off
 You have took off her panties.
 
 [[OK|Start]]
+
+
+:: TakeValocordin {"position":"550,1125","size":"100,100"}
+<img src="https://ixxilon.mauve.de/300/01741419_8.jpg">
+
+You took Valocordin.
+
+<<set $moves += 1>>
+<<set $has_valocordin = "true">>
+
+[[OK|Start]] 
 
 
 :: Tasha {"position":"775,425","size":"100,100"}
@@ -403,11 +550,23 @@ You have took off her panties.
 	[[Touch panties]]
 <<else>>
 	[[Lick Pussy]]
-    [[Fuck Pussy]]
-    [[Fuck Ass]]
+    <<if $is_cock_stoned eq "true">>
+        [[Fuck Pussy]]
+        [[Fuck Ass|Fuck Ass Check]]
+     <</if>>
 <</if>>
 
 [[Do nothing]]
+
+
+:: TashaDrinks {"position":"175,1250","size":"100,100"}
+<img height="500px" src="https://lh3.googleusercontent.com/d/1yz_yM4wRMIaZgpIPVF4ftk8wNiNihkIg">
+
+
+It takes some time to take an effect.
+
+<<set $has_energy_drink = "false">>
+[[OK|Start]] 
 
 
 :: Termo {"position":"75,400","size":"100,100"}
@@ -482,16 +641,20 @@ It requers some time to take an effect.
 :: To Do {"position":"50,50","size":"100,100"}
 +unlim muscle play if emotion <=5
 + Massage nums
++Stoned dick
 
 FPV?
 
 Undress2
 Tune moves
 
-Stoned dick
+
+Не снимая одежды
+3x
+Сквирт
 
 
-:: Touch panties {"position":"950,500","size":"100,100"}
+:: Touch panties {"position":"950,600","size":"100,100"}
 <<set $moves += 1>>
 
 <<if $emotion lt $emotion_horny>>
