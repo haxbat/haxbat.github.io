@@ -40,8 +40,9 @@ You may interact with her now.
 :: CockStoned {"position":"650,0","size":"100,100"}
 <img height="300px" src="https://sun9-5.userapi.com/impf/c639524/v639524246/4cdad/EKJTNipJt5Q.jpg?size=1280x1275&quality=96&sign=63253eefab5f408288979ab081dac4cf&c_uniq_tag=xPjVqwsWsjoZR0rxu6eQT5TfRE-9lSJZLoHfnJGv130&type=album">
 
-Your cock is stoned
+Your cock is stoned. She noticed that.
 <<set $IsCockStoned = "true">>
+<<set $Emotion += 1>>
 [[OK|MainScene]]
 
 
@@ -110,7 +111,7 @@ Your cock is stoned
 
 You did double penetration with the pink cylinder.
 
-[[OK|FuckAssYes]] 
+[[OK|FuckAssYes]]
 
 
 :: DoNothing {"position":"225,200","size":"100,100"}
@@ -120,7 +121,7 @@ Do nothing
 <<set $Moves += 1>>
 
 
-:: DreamAboutTasha {"position":"775,0","size":"100,100"}
+:: DreamAboutTasha {"position":"800,0","size":"100,100"}
 <<set $Moves += 1>>
 <<set $DreamBase += 1>>
 
@@ -138,8 +139,6 @@ Do nothing
 <</if>>
 
 
-
-
 :: DrinkEnergy {"position":"500,1600","size":"100,100"}
 <img height="500px" src="https://www.fmcgbusiness.co.nz/wp-content/uploads/2015/08/rsz_16dksh_and_red-bull-energy-drink-can-nz-open.jpg">
 
@@ -151,7 +150,7 @@ Tasha didn't like it, but you feel yourself more confident.
 <<set $Dominance += 1>>
 <<set $Emotion -= 1>>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: DrinkLaxative {"position":"725,1225","size":"100,100"}
@@ -205,22 +204,7 @@ You may drink it by yourself.
 [[Do nothing|DoNothing]]
 
 
-
-:: FuckAss {"position":"1875,525","size":"100,100"}
-<img height="500px" src="https://lh3.googleusercontent.com/d/1XG0Q0IhXipMK6Bt0YW7D6Bb1AM0nHspy">
-
-<<set $Moves += 1>>
-
-You are trying to get her from behind
-
-<<if  $Dominance gte $DominanceAnal>>
-	[[Fuck ass|FuckAssYes]] 
-<<else>>
-	[[Fuck ass|FuckAssNo]] 
-<</if>>
-
-
-:: FuckAssNo {"position":"1800,675","size":"100,100"}
+:: FuckAssNo {"position":"1975,650","size":"100,100"}
 <img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
 
 <<if $IsTashaJacketOn eq "false">>
@@ -238,10 +222,9 @@ Tasha rejects
 [[OK|MainScene]]
 
 
-:: FuckAssYes {"position":"2000,700","size":"100,100"}
+:: FuckAssYes {"position":"1975,775","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1ORAJDI-gTndcF15Ehyb2hj-1kAQTBW8r">
 
-<<set $Emotion -= 1>>
 <<set $AchievementAnalFuck = 1>>
 
 <<if  $IsDildoEnabled eq "true" and $AchievementTashaDildo eq 0>>
@@ -266,7 +249,25 @@ Scene Blow
 [[OK|MainScene]]
 
 
-:: FuckPussy {"position":"1700,800","size":"100,100"}
+:: FuckPussyNo {"position":"1700,650","size":"100,100"}
+<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
+
+<<if $IsTashaJacketOn eq "false">>
+	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
+    <<else>>
+    <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
+<</if>>
+
+<<set $Emotion -= 1>>
+
+
+
+Tasha rejects
+
+[[OK|MainScene]]
+
+
+:: FuckPussyYes {"position":"1700,775","size":"100,100"}
 <<set $Moves += 1>>
 <<set $Emotion += 1>>
 
@@ -348,7 +349,7 @@ She felt sleepy and went home.
 [[Try again|Intro]]
 
 
-:: GentleMassage {"position":"1175,900","size":"100,100"}
+:: GentleMassage {"position":"1225,875","size":"100,100"}
 <img height="300px" src="https://files.g8ozdcdn.com/wp-content/uploads/2019/09/e395758cf11b4c5a6b570eea82165e9c.jpeg" >
 
 <<set $Moves += 1>>
@@ -369,7 +370,7 @@ She felt sleepy and went home.
 	She doesn't like it.
 <</if>>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: HappyEnd {"position":"1825,1100","size":"100,100"}
@@ -379,24 +380,24 @@ She felt sleepy and went home.
 You win!
 [[Try again|Intro]]
 Achievements:
-<<if $Dominance gte $DominanceAnal>>
+<<if $Dominance gte $DominanceAnal>> \
 	Alpha Male
-<</if>>
-<<if $Dominance eq 0>>
+<</if>> \
+<<if $Dominance eq 0>> \
 	Omega Male
-<</if>>
-<<if $AchievementNakedKing eq 1>>
+<</if>> \
+<<if $AchievementNakedKing eq 1>> \
 	Naked King
-<</if>>
-<<if $AchievementAnalFuck eq 1 and $AchievementPussyFuck eq 1 and $AchievementBJ eq 1>>
+<</if>> \
+<<if $AchievementAnalFuck eq 1 and $AchievementPussyFuck eq 1 and $AchievementBJ eq 1>> \
 	In all holes
-<</if>>
-<<if $AchievementDP eq 1>>
+<</if>> \
+<<if $AchievementDP eq 1>> \
 	Double Penetration
-<</if>>
-<<if $AchievementDP eq 1>>
-	Double Penetration
-<</if>>
+<</if>> \
+<<if $IsTashaJacketOn eq "true" and $IsTashaSkirtOn eq "true" and $IsDarvinShirtOn eq "true" and $IsDarvinPantsOn eq "true">> \
+    Dandy. Did not take off anything.
+<</if>> \
 
 
 :: InspectPuzzle {"position":"1800,25","size":"100,100"}
@@ -406,10 +407,10 @@ Achievements:
 [[Kick it|KickPuzzle]]
 [[Put it on shelf|ShelfPuzzle]]
 
-[[Do nothing|DoNothing]] 
+[[Do nothing|DoNothing]]
 
 
-:: IntensiveMassage {"position":"1350,900","size":"100,100"}
+:: IntensiveMassage {"position":"1350,875","size":"100,100"}
 <img height="300px" src="https://files.g8ozdcdn.com/wp-content/uploads/2019/09/e395758cf11b4c5a6b570eea82165e9c.jpeg" >
 
 <<set $Moves += 1>>
@@ -431,7 +432,7 @@ Achievements:
 	She doesn't like it.
 <</if>>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: Intro {"position":"500,750","size":"100,100"}
@@ -458,7 +459,7 @@ Achievements:
 <<set $IsTashaRubBonnerAss = "false" >>
 <<set $IsTashaMassage = "false">>
 <<set $isTashaEnergyDrink = "true">>
-<<set $Emotion = 4>>
+<<set $Emotion = 5>>
 
 /*Darwin*/
 <<set $DreamBase = 0>>
@@ -528,7 +529,6 @@ Achievements:
 <</if>>
 
 
-
 :: JerkOff {"position":"1500,175","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1AnAVpiMOxdT6JiczrBNgF0ec_HywKAo-">
 
@@ -563,19 +563,8 @@ She doesn't like that.
 [[OK|MainScene]]
 
 
-:: LickPussy {"position":"1000,575","size":"100,100"}
-<<set $Moves += 1>>
-
-<<if $Emotion gte $EmotionHot>>
-<img height="500px" src="https://lh3.googleusercontent.com/d/1vfOYjBbIABxzDHa1mCGv9EzvYfpRamXj">
-
-She likes it.
-
-	<<set $Emotion += 1>>
-<<else>>
-	<<set $Emotion -= 1>>
-    
-    <img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
+:: LickPussyNo {"position":"900,550","size":"100,100"}
+<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
 
 <<if $IsTashaJacketOn eq "false">>
 	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
@@ -583,43 +572,53 @@ She likes it.
     <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
 <</if>>
 
+<<set $Emotion -= 1>>
 
 
-  
-    She doen't allow you lick pussy.
-<</if>>
+Tasha rejects
 
 [[OK|MainScene]]
 
 
-:: LickTits {"position":"1000,450","size":"100,100"}
+:: LickPussyYes {"position":"1050,550","size":"100,100"}
 <<set $Moves += 1>>
+<img height="500px" src="https://lh3.googleusercontent.com/d/1vfOYjBbIABxzDHa1mCGv9EzvYfpRamXj">
 
-<<if $Emotion gte $EmotionHot>>
+She likes it.
+
+<<set $Emotion += 1>>
+
+[[OK|MainScene]]
+
+
+:: LickTitsNo {"position":"900,425","size":"100,100"}
+<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
+
+<<if $IsTashaJacketOn eq "false">>
+	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
+    <<else>>
+    <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
+<</if>>
+
+<<set $Emotion -= 1>>
+
+
+Tasha rejects
+
+[[OK|MainScene]]
+
+
+:: LickTitsYes {"position":"1050,425","size":"100,100"}
+<<set $Moves += 1>>
 <img height="500px" src="https://lh3.googleusercontent.com/d/1MRhu1Yhv6yK7oAWtNZJ_83HhY37Zeww6">
+
+
 
 <<if $Emotion lt $EmotionHorny>>
 	<<set $Emotion += 1>>
     She likes it.
 <<else>>
-	She want more.
-<</if>>
-
-<<else>>
-	<<set $Emotion -= 1>>
-    
-    <img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
-
-<<if $IsTashaJacketOn eq "false">>
-	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
-    <<else>>
-    <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
-<</if>>
-
-
-
-  
-    She doen't allow you lick tits.
+	She wants more.
 <</if>>
 
 [[OK|MainScene]]
@@ -649,36 +648,36 @@ She likes it.
     <</if>>
 <</if>>
 
-<<if $Emotion eq $EmotionOrgazm and $AchievementTashaDildo eq 0>>
+<<if $Emotion eq $EmotionOrgazm and $AchievementTashaDildo eq 0 and $IsDildoEnabled eq "true">>
     <<goto "TashaDildoPussy">>
 <</if>>
 
 /*GAME OVER*/
-<<if $Moves gte $MovesMax>>
-    <<if $AchievementAnalFuck eq 1 or $AchievementPussyFuck eq 1 or $AchievementBJ eq 1>>
-        <<goto "HappyEnd">>
-    <<else>>
-        <<goto "GameOverMoves">>
-    <</if>>
-<</if>>
-<<if $MovesGameOverTermo eq $Moves >>
-    <<goto "GameOverTermo">>
-<</if>>
-<<if $Emotion lte $EmotionGameOver >>
-    <<goto "GameOverEmotion">>
-<</if>>
-<<if $MovesGameOverTashaValocordin eq $Moves >>
-    <<goto "GameOverValocordin">> 
-<</if>>
-<<if $MovesGameOverTashaLaxative eq $Moves >>
-    <<goto "GameOverTashaLaxative">>
-<</if>>
-<<if $MovesGameOverDarwinLaxative eq $Moves >>
-    <<goto "GameOverDarwinLaxative">>
-<</if>>
-<<if $MovesGameOverDarwinValocordin eq $Moves >>
-    <<goto "GameOverDarwinValocordin">>
-<</if>>
+<<if $Moves gte $MovesMax>> \
+    <<if $AchievementAnalFuck eq 1 or $AchievementPussyFuck eq 1 or $AchievementBJ eq 1>> \
+        <<goto "HappyEnd">> \
+    <<else>> \
+        <<goto "GameOverMoves">> \
+    <</if>> \
+<</if>> \
+<<if $MovesGameOverTermo eq $Moves >> \
+    <<goto "GameOverTermo">> \
+<</if>> \
+<<if $Emotion lte $EmotionGameOver >> \
+    <<goto "GameOverEmotion">> \
+<</if>> \
+<<if $MovesGameOverTashaValocordin eq $Moves >> \
+    <<goto "GameOverValocordin">> \
+<</if>> \
+<<if $MovesGameOverTashaLaxative eq $Moves >> \
+    <<goto "GameOverTashaLaxative">> \
+<</if>> \
+<<if $MovesGameOverDarwinLaxative eq $Moves >> \
+    <<goto "GameOverDarwinLaxative">> \
+<</if>> \
+<<if $MovesGameOverDarwinValocordin eq $Moves >> \
+    <<goto "GameOverDarwinValocordin">> \
+<</if>> \
 
 <<if $IsTermoEnabled eq "true">>
     [[Inspect air conditioner controller|Termo]]
@@ -735,15 +734,17 @@ She likes it.
 <</if>>
 
 
-:: Massage {"position":"1250,775","size":"100,100"}
+:: Massage {"position":"1275,725","size":"100,100"}
 <img height="300px" src="https://files.g8ozdcdn.com/wp-content/uploads/2019/09/e395758cf11b4c5a6b570eea82165e9c.jpeg" >
 
-[[Do the gentle massage|GentleMassage]]
-[[Do the intensive massage|IntensiveMassage]]
+<<if $IsTashaJacketOn eq "true">>
+	[[Do the massage|NormalMassage]]
+<<else>>
+  [[Do the gentle massage|GentleMassage]]
+  [[Do the intensive massage|IntensiveMassage]]
+<</if>>
 
 [[Do nothing|DoNothing]]
-
-
 
 
 :: MedKit {"position":"425,1100","size":"100,100"}
@@ -773,14 +774,37 @@ You have played with your muscles.
 <<set $Moves += 1>>
 
 
-<<if  $Emotion lt $EmotionHot >>
+<<if  $Emotion lt $EmotionHot -1 >>
 	<<set $Emotion += 1>>
     She likes it.
 <<else>>
 	Looks like she ignores you. Try something new.
 <</if>>    
     
-[[OK|MainScene]] 
+[[OK|MainScene]]
+
+
+:: NormalMassage {"position":"1475,875","size":"100,100"}
+<img height="300px" src="https://files.g8ozdcdn.com/wp-content/uploads/2019/09/e395758cf11b4c5a6b570eea82165e9c.jpeg" >
+
+<<set $Moves += 1>>
+
+<<if $Emotion gte $EmotionHappy & $IsTashaMassage eq "true" >>
+	No reaction. Try something new.
+<</if>>
+
+<<if $Emotion gte $EmotionHappy & $IsTashaMassage eq "false" >>
+	<<set $Emotion += 1>>
+    <<set $IsTashaMassage = "true">>
+	You did massage. She likes it.
+<</if>>
+
+<<if $Emotion lt $EmotionHappy>>
+	<<set $Emotion -= 1>>
+	She doesn't like it.
+<</if>>
+
+[[OK|MainScene]]
 
 
 :: PlayPuzzle {"position":"2075,0","size":"100,100"}
@@ -852,7 +876,7 @@ She doesn't allow you rip off her top.
 <<set $Moves += 1>>
 <<set $Emotion -= 1>>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: RipOffTashaSkirtYes {"position":"900,1450","size":"100,100"}
@@ -863,7 +887,7 @@ You have riped off her skirt.
 <<set $Dominance += 1>>
 <<set $Emotion -= 1>>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: RipOffTashaTopNo {"position":"1025,1200","size":"100,100"}
@@ -884,7 +908,7 @@ She doesn't allow you rip off her top.
 <<set $Moves += 1>>
 <<set $Emotion -= 1>>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: RipOffTashaTopYes {"position":"900,1200","size":"100,100"}
@@ -895,11 +919,11 @@ You have riped off her top.
 <<set $Dominance += 1>>
 <<set $Emotion -= 1>>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: RipPanties {"position":"1450,1300","size":"100,100"}
-<img  height="700px" src="https://lh3.googleusercontent.com/d/10viPsCQEbjsFMlW_YfOTUN55MFjiN01E">
+<img  height="500px" src="https://lh3.googleusercontent.com/d/10viPsCQEbjsFMlW_YfOTUN55MFjiN01E">
 
 <<set $Moves += 1>>
 <<set $Dominance += 1>>
@@ -911,16 +935,32 @@ You have ripped her panties.
 [[OK|MainScene]]
 
 
-:: RubBonnerAss {"position":"1375,550","size":"100,100"}
+:: RubBonnerAssNo {"position":"1550,325","size":"100,100"}
+<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
+
+<<if $IsTashaJacketOn eq "false">>
+	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
+    <<else>>
+    <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
+<</if>>
+
+<<set $Emotion -= 1>>
+
+
+Tasha rejects
+
+[[OK|MainScene]]
+
+
+:: RubBonnerAssYes {"position":"1550,450","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1hgUymNyjEkAOfQ1_QXZUuFlaj_Wb7sB9">
 <<set $Moves += 1>>
 
-<<if $IsTashaRubBonnerAss eq "true" >>
-	No reaction. Try something new.
-<<else>>
+<<if $Emotion lt $EmotionHorny -1 >>
 	<<set $Emotion += 1>>
-    <<set $IsTashaRubBonnerAss = "true">>
 	She likes it.
+<<else>>
+ 	She want's more.
 <</if>>
 
 [[OK|MainScene]]
@@ -962,7 +1002,7 @@ You took Laxative.
 <<set $Moves += 1>>
 <<set $IsDarwinLaxative = "true">>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: TakeOffPanties {"position":"1325,1300","size":"100,100"}
@@ -985,8 +1025,7 @@ You've took off your pants
 <<set $IsDarvinPantsOn = "false">>
 
 <<if $Emotion gte $EmotionHorny>>
-	She likes it.
-	<<set $Emotion += 1>>
+	She observing with interest.
 <<else>>
 	She doesn't like it
 	<<set $Emotion -= 2>>
@@ -1003,14 +1042,13 @@ You showed breast
 <<set $IsDarvinShirtOn = "false">>
 
 <<if $IsTashaJacketOn eq "false" or $Emotion gte $EmotionHorny>>
-	She likes it.
-	<<set $Emotion += 1>>
+	She observing with interest.
 <<else>>
-	She doesn't like it
+	She doesn't like it. There were no reasons for that move from your side.
 	<<set $Emotion -= 1>>
 <</if>>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: TakeOffTashaJacketNo {"position":"1025,775","size":"100,100"}
@@ -1019,7 +1057,7 @@ She doen't allow you take off her jacket.
 <<set $Moves += 1>>
 <<set $Emotion -= 1>>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: TakeOffTashaJacketYes {"position":"900,775","size":"100,100"}
@@ -1028,7 +1066,7 @@ You have took off her jacket.
 <<set $Moves += 1>>
 <<set $IsTashaJacketOn = "false">>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: TakeOffTashaSkirtNo {"position":"1025,1325","size":"100,100"}
@@ -1049,7 +1087,7 @@ She doesn't allow you take off her skirt.
 <<set $Moves += 1>>
 <<set $Emotion -= 1>>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: TakeOffTashaSkirtYes {"position":"900,1325","size":"100,100"}
@@ -1058,7 +1096,7 @@ You have took off her Skirt.
 <<set $Moves += 1>>
 <<set $IsTashaSkirtOn = "false">>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: TakeOffTashaTopNo {"position":"1025,1075","size":"100,100"}
@@ -1080,7 +1118,7 @@ She doesn't allow you take off her top.
 <<set $Moves += 1>>
 <<set $Emotion -= 1>>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: TakeOffTashaTopYes {"position":"900,1075","size":"100,100"}
@@ -1089,7 +1127,7 @@ You have took off her top.
 <<set $Moves += 1>>
 <<set $IsTashaTopOn = "false">>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: TakeOffUnderpants {"position":"1475,0","size":"100,100"}
@@ -1101,8 +1139,7 @@ You've took off your pants
 <<set $IsDarvinUnderpantsOn = "false">>
 
 <<if $Emotion gte $EmotionHorny>>
-	She likes it.
-	<<set $Emotion += 1>>
+	She observing with interest.
 <<else>>
 	She doesn't like it
 	<<set $Emotion -= 4>>
@@ -1119,73 +1156,89 @@ You took Valocordin.
 <<set $Moves += 1>>
 <<set $IsDarwinValocordin = "true">>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
-:: Tasha {"position":"1225,550","size":"100,100"}
-<<if $isDarwinInCage eq "false">>
-  <<if $IsTashaJacketOn eq "true">>
-  		<<if $Emotion gte $EmotionHot>>
+:: Tasha {"position":"1275,550","size":"100,100"}
+<<if $isDarwinInCage eq "false">> \
+  <<if $IsTashaJacketOn eq "true">> \
+  		<<if $Emotion gte $EmotionHot>> \
       		[[Take off Jacket|TakeOffTashaJacketYes]]
-        <<else>>
+        <<else>> \
         	[[Take off Jacket|TakeOffTashaJacketNo]]
-        <</if>>
-  <</if>>
+        <</if>> \
+  <</if>> \
   
-  <<if $IsTashaJacketOn eq "false" and $IsTashaTopOn eq "true">>
-        <<if $Emotion gte $EmotionHot>>
+  <<if $IsTashaJacketOn eq "false" and $IsTashaTopOn eq "true">> \
+        <<if $Emotion gte $EmotionHot>> \
       		[[Take off Top|TakeOffTashaTopYes]]
             [[Rip off Top|RipOffTashaTopYes]]
-        <<else>>
+        <<else>> \
         	[[Take off Top|TakeOffTashaTopNo]]
             [[Rip off Top|RipOffTashaTopNo]]
-        <</if>>
-  <</if>>
+        <</if>> \
+  <</if>> \ 
   
-  <<if $IsTashaTopOn eq "false">>
-    [[Lick tits|LickTits]]
-  <</if>>
+  <<if $IsTashaTopOn eq "false">> \
+    <<if $Emotion gte $EmotionHot>> \
+        [[Lick tits|LickTitsYes]]
+    <<else>> \
+        [[Lick tits|LickTitsNo]]
+    <</if>> \
+  <</if>> \
   
-  <<if $IsTashaJacketOn eq "false">>
-      [[Massage]]
-  <</if>>
-
-  <<if $IsTashaSkirtOn eq "true">>
-        <<if $Emotion gte $EmotionHot>>
+  [[Massage]]
+  
+  <<if $IsTashaSkirtOn eq "true">> \
+        <<if $Emotion gte $EmotionHot>> \
       		[[Take off Skirt|TakeOffTashaSkirtYes]]
             [[Rip off Skirt|RipOffTashaSkirtYes]]
-        <<else>>
+        <<else>> \
         	[[Take off Skirt|TakeOffTashaSkirtNo]]
             [[Rip off Skirt|RipOffTashaSkirtNo]]
-        <</if>>
-  <</if>>
+        <</if>> \
+  <</if>> \
 
-  <<if $IsCockStoned eq "true">>
-  	[[Rub boner against her ass|RubBonnerAss]]
-  <</if>>
+  <<if $IsCockStoned eq "true">> \
+    <<if $Emotion gte $EmotionHot>> \
+        [[Rub boner against her ass|RubBonnerAssYes]]
+    <<else>> \
+        [[Rub boner against her ass|RubBonnerAssNo]]
+    <</if>> \	
+    <<if $Emotion gte $EmotionHorny>> \
+        [[Fuck Pussy|FuckPussyYes]]
+    <<else>> \
+        [[Fuck Pussy|FuckPussyNo]]
+    <</if>> \
+    <<if  $Dominance gte $DominanceAnal>> \
+        [[Fuck ass|FuckAssYes]] 
+    <<else>> \
+        [[Fuck ass|FuckAssNo]] 
+    <</if>> \
+  <</if>> \
 
-  <<if $IsTashaPantiesOn eq "true" and $IsTashaSkirtOn eq "false">>
+  <<if $IsTashaPantiesOn eq "true" and $IsTashaSkirtOn eq "false">> \
         [[Rub Panties|RubPanties]]
         [[Take off Panties|TakeOffPanties]]
         [[Rip Panties|RipPanties]]
-  <<else>>
-      <<if $IsTashaPantiesOn eq "false">>
-      [[Lick pussy|LickPussy]]
-          <<if $IsCockStoned eq "true">>
-              [[FuckPussy]]
-              [[Fuck Ass|FuckAss]]
-           <</if>>
-      <</if>>
-  <</if>>
+  <<else>> \
+      <<if $IsTashaPantiesOn eq "false">> \
+        <<if $Emotion gte $EmotionHot>> \
+            [[Lick pussy|LickPussyYes]]
+        <<else>> \
+            [[Lick pussy|LickPussyNo]]
+        <</if>> \
+      <</if>> \
+  <</if>> \
 
-<<else>>
+<<else>> \
 	You need to get out from the cage first.
-<</if>>
+<</if>> \
 
 [[Do nothing|DoNothing]]
 
 
-:: TashaDildoPussy {"position":"2300,500","size":"100,100"}
+:: TashaDildoPussy {"position":"2300,525","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1YIAFcqC30jIbLHqm8RcRgO3beKLAptlY">
 
 She is so hot. She took the pink cylinder from the floor and started masturbate.
@@ -1196,7 +1249,7 @@ She is so hot. She took the pink cylinder from the floor and started masturbate.
 
 <<set $AchievementTashaDildo = 1>>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: TashaDrinks {"position":"125,1725","size":"100,100"}
@@ -1206,11 +1259,11 @@ She is so hot. She took the pink cylinder from the floor and started masturbate.
 It takes some time to take an effect.
 
 <<set $isTashaEnergyDrink = "false">>
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: TashaSwitchOffTermo {"position":"75,150","size":"100,100"}
-    She noticed your actions against the controller and switched it off
+She noticed your actions against the controller and switched it off
     
     [[OK|MainScene]] 
     
@@ -1228,7 +1281,7 @@ It's really hot here. Tasha took off her jacket.
 <<set $IsTashaJacketOn = "false" >>
 <<set $TriggerTermoUndress = 1>>
 
-[[OK|MainScene]] 
+[[OK|MainScene]]
 
 
 :: TashaValocordinBoost {"position":"225,25","size":"100,100"}
@@ -1236,7 +1289,7 @@ It looks like Valocordin took action. Tasha seems more relaxed. Nice job!
 
 [[OK|MainScene]] 
 
-<<set $Emotion += 1 >>
+<<set $Emotion += 3 >>
 <<set $TriggerTashaValocordinBoost = 1>>
 
 
