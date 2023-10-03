@@ -103,11 +103,11 @@ Your cock is stoned. She noticed that.
 [[Do nothing|DoNothing]]
 
 
-:: DarwinDildoPussy {"position":"2300,675","size":"100,100"}
+:: DarwinDildoPussy {"position":"2300,700","size":"100,100"}
 <img src="https://lh3.googleusercontent.com/d/1S5kFAd2CpgL4LJhloRxtGQD3_WlCH3QX">
 
 <<set $Moves += 1>>
-<<set $AchievementDP = 1>>
+<<set $AchievementDarwinDildo = 1>>
 
 You did double penetration with the pink cylinder.
 
@@ -227,7 +227,7 @@ Tasha rejects
 
 <<set $AchievementAnalFuck = 1>>
 
-<<if  $IsDildoEnabled eq "true" and $AchievementTashaDildo eq 0>>
+<<if  $IsDildoEnabled eq "true" and $AchievementDarwinDildo eq 0>>
 	[[Fuck pussy with the pink cylinder|DarwinDildoPussy]]
     [[Let Her Be|MainScene]]
 <</if>>
@@ -392,11 +392,17 @@ Achievements:
 <<if $AchievementAnalFuck eq 1 and $AchievementPussyFuck eq 1 and $AchievementBJ eq 1>> \
 	In all holes
 <</if>> \
-<<if $AchievementDP eq 1>> \
+<<if $AchievementDarwinDildo eq 1>> \
 	Double Penetration
 <</if>> \
 <<if $IsTashaJacketOn eq "true" and $IsTashaSkirtOn eq "true" and $IsDarvinShirtOn eq "true" and $IsDarvinPantsOn eq "true">> \
     Dandy. Did not take off anything.
+<</if>> \
+<<if $AchievementTashaDildo eq 1>> \
+	Tasha Dildo
+<</if>> \
+<<if $AchievementSweetLover eq 1>> \
+	Sweet Lover
 <</if>> \
 
 
@@ -451,7 +457,7 @@ Achievements:
 <<set $EmotionHappy = 6>>
 <<set $EmotionHot = 9>>
 <<set $EmotionHorny = 12>>
-<<set $EmotionOrgazm = 15>>
+<<set $EmotionOrgazm = 16>>
 <<set $IsTashaJacketOn = "true" >>
 <<set $IsTashaTopOn = "true">>
 <<set $IsTashaSkirtOn = "true">>
@@ -478,9 +484,10 @@ Achievements:
 <<set $AchievementAnalFuck = 0>>
 <<set $AchievementPussyFuck = 0>>
 <<set $AchievementBJ = 0>>
-<<set $AchievementDP = 0>>
 <<set $AchievementTashaDildo = 0>>
+<<set $AchievementDarwinDildo = 0>>
 <<set $AchievementNakedKing = 0>>
+<<set $AchievementSweetLover = 0>>
 
 /*Misc*/
 <<set $IsPuzzleEnabled = "true">>
@@ -634,22 +641,40 @@ Tasha rejects
         <img  class="tasha" src="https://lh3.googleusercontent.com/d/11Qy-wv2yp19ZxZboZR99XU1GmBq4ZVpH">
     <</if>>
 <<else>>
-    <img class="tasha" src="https://lh3.googleusercontent.com/d/1djJ4Du3Kc7mTcijMwv1SHILjBNrv8OOT">
-    <<if $IsTashaJacketOn eq "true">>
-        <img  class="tasha" src="https://lh3.googleusercontent.com/d/1Um0cCzRVZiT5VE1Lv1ZrGsmsEJR8ORTM">
-    <<else>>
+   <<if $Emotion gte $EmotionHorny + 2>>
+        <img  class="tasha" src="https://lh3.googleusercontent.com/d/1y1d3wveccRGN-ISAXAQ02roDwxI8-XrD">
+        <img  class="tasha" src="https://lh3.googleusercontent.com/d/1b3VZ8OWVjpUt0PIexE5kNxjVA1U9fYQ9">
         <<if $IsTashaTopOn eq "true">>
-            <img  class="tasha" src="https://lh3.googleusercontent.com/d/17rnKWgQX2tqPCUbLGRnVnU5qRNGEosk-">
+            <img  class="tasha" src="https://lh3.googleusercontent.com/d/1zZPsWSpz0bIyhUgD_dDF_2f7GR1MoYUY">
         <<else>>
-            <<if $IsTashaSkirtOn eq "true">>
-                <img  class="tasha" src="https://lh3.googleusercontent.com/d/1XIgH0cMTifuwBn8aB2YzVYb8-Hzx5QWX">
+            <<if $IsTashaPantiesOn eq "true">>
+                <img  class="tasha" src="https://lh3.googleusercontent.com/d/1xk-GnvqqHQvJB49jOc2KQ2CsN73sdM28">
             <</if>> 
         <</if>>
-    <</if>>
+   <<else>>
+        <img class="tasha" src="https://lh3.googleusercontent.com/d/1djJ4Du3Kc7mTcijMwv1SHILjBNrv8OOT">
+        <<if $IsTashaJacketOn eq "true">>
+            <img  class="tasha" src="https://lh3.googleusercontent.com/d/1Um0cCzRVZiT5VE1Lv1ZrGsmsEJR8ORTM">
+        <<else>>
+            <<if $IsTashaTopOn eq "true">>
+                <img  class="tasha" src="https://lh3.googleusercontent.com/d/17rnKWgQX2tqPCUbLGRnVnU5qRNGEosk-">
+            <<else>>
+                <<if $IsTashaSkirtOn eq "true">>
+                    <img  class="tasha" src="https://lh3.googleusercontent.com/d/1XIgH0cMTifuwBn8aB2YzVYb8-Hzx5QWX">
+                <<else>>
+                None
+                <</if>>
+            <</if>>
+        <</if>>
+   <</if>>
 <</if>>
 
-<<if $Emotion eq $EmotionOrgazm and $AchievementTashaDildo eq 0 and $IsDildoEnabled eq "true">>
+<<if $Emotion gte $EmotionOrgazm and $AchievementTashaDildo eq 0 and $IsDildoEnabled eq "true">>
     <<goto "TashaDildoPussy">>
+<</if>>
+
+<<if $Emotion gte $EmotionOrgazm and $AchievementAnalFuck eq 0 and $AchievementPussyFuck eq 0 and $AchievementBJ eq 0 and $IsDildoEnabled eq "false">>
+    <<goto "TashaOrgazm">>
 <</if>>
 
 /*GAME OVER*/
@@ -678,6 +703,8 @@ Tasha rejects
 <<if $MovesGameOverDarwinValocordin eq $Moves >> \
     <<goto "GameOverDarwinValocordin">> \
 <</if>> \
+
+
 
 <<if $IsTermoEnabled eq "true">>
     [[Inspect air conditioner controller|Termo]]
@@ -708,29 +735,31 @@ Tasha rejects
 <</if>>
 
 /*Set Face emmotion*/
-<<if $Emotion lt $EmotionNeutral>>
-/*Face Angry*/
-<img  class="tasha" src="https://lh3.googleusercontent.com/d/1J_eWoUQkUsd4VRyra9cS_YVT4_Y28pjx">
-<</if>>
+<<if $isDarwinInCage eq "true">>
+    <<if $Emotion lt $EmotionNeutral>>
+    /*Face Angry*/
+    <img  class="tasha" src="https://lh3.googleusercontent.com/d/1J_eWoUQkUsd4VRyra9cS_YVT4_Y28pjx">
+    <</if>>
 
-<<if $Emotion gte $EmotionNeutral & $Emotion lt $EmotionHappy >>
-/*Face Neutral*/
-<img  class="tasha" src="https://lh3.googleusercontent.com/d/1SFc4eTMSLZJXU4GNEbLLkFza7iDgVMPA">
-<</if>>
+    <<if $Emotion gte $EmotionNeutral & $Emotion lt $EmotionHappy >>
+    /*Face Neutral*/
+    <img  class="tasha" src="https://lh3.googleusercontent.com/d/1SFc4eTMSLZJXU4GNEbLLkFza7iDgVMPA">
+    <</if>>
 
-<<if $Emotion gte $EmotionHappy & $Emotion lt $EmotionHot >>
-/*Face Happy*/
-<img  class="tasha" src="https://lh3.googleusercontent.com/d/1VEgNQf8sqqj6PcKxP9AdJU4Y2Zkr_fOn">
-<</if>>
+    <<if $Emotion gte $EmotionHappy & $Emotion lt $EmotionHot >>
+    /*Face Happy*/
+    <img  class="tasha" src="https://lh3.googleusercontent.com/d/1VEgNQf8sqqj6PcKxP9AdJU4Y2Zkr_fOn">
+    <</if>>
 
-<<if $Emotion gte $EmotionHot & $Emotion lt $EmotionHorny  >>
-/*Face Hot*/
-<img  class="tasha" src="https://lh3.googleusercontent.com/d/1SgvVGKYNq_xPxDXsas-FSqW2h5T2Vo1U">
-<</if>>
+    <<if $Emotion gte $EmotionHot & $Emotion lt $EmotionHorny  >>
+    /*Face Hot*/
+    <img  class="tasha" src="https://lh3.googleusercontent.com/d/1SgvVGKYNq_xPxDXsas-FSqW2h5T2Vo1U">
+    <</if>>
 
-<<if $Emotion gte $EmotionHorny>>
-/*Face Horny*/
-<img  class="tasha" src="https://lh3.googleusercontent.com/d/1TsY9nIuh7EUTonvuOtWwl0kQuR4dzdUG">
+    <<if $Emotion gte $EmotionHorny>>
+    /*Face Horny*/
+    <img  class="tasha" src="https://lh3.googleusercontent.com/d/1TsY9nIuh7EUTonvuOtWwl0kQuR4dzdUG">
+    <</if>>
 <</if>>
 
 
@@ -1260,6 +1289,16 @@ It takes some time to take an effect.
 
 <<set $isTashaEnergyDrink = "false">>
 [[OK|MainScene]]
+
+
+:: TashaOrgazm {"position":"2200,1075","size":"100,100"}
+<img height="500px" src="https://lh3.googleusercontent.com/d/1TSAoQqt2xdV3smJbssyvChhVZ--GF5w4">
+
+She cumed!
+
+<<set $AchievementSweetLover = 1>>
+
+[[OK|HappyEnd]]
 
 
 :: TashaSwitchOffTermo {"position":"75,150","size":"100,100"}
