@@ -9,7 +9,9 @@ Darwin
   "format-version": "2.36.1",
   "start": "Intro",
   "tag-colors": {
-    "Test": "blue"
+    "Test": "blue",
+    "cp": "blue",
+    "art": "orange"
   },
   "zoom": 1
 }
@@ -102,11 +104,7 @@ Your cock is stoned. She noticed that.
 	[[Muscle play|MusclePlay]]
 <</if>>
 
-<<if $IsDarvinPantsOn eq "true">>
-	[[Take off Pants|TakeOffPants]]
-<</if>>
-
-<<if $IsDarvinPantsOn eq "false" and $IsDarvinUnderpantsOn eq "true">>
+<<if $IsDarvinUnderpantsOn eq "true">>
 	[[Take off Underpants|TakeOffUnderpants]]
 <</if>>
 
@@ -131,6 +129,21 @@ Your cock is stoned. She noticed that.
 You did double penetration with the pink cylinder.
 
 [[OK|FuckAssYes]]
+<<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
+
+
+:: DarwinDrinksEnergy {"position":"475,1475","size":"100,100"}
+<img height="500px" src="https://www.fmcgbusiness.co.nz/wp-content/uploads/2015/08/rsz_16dksh_and_red-bull-energy-drink-can-nz-open.jpg">
+
+
+Tasha didn't like it, but you feel yourself more confident.
+
+<<set $Moves += 1>>
+<<set $isTashaEnergyDrink = "false">>
+<<set $Dominance += 1>>
+<<set $Emotion -= 1>>
+
+[[OK|MainScene]]
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
@@ -165,22 +178,7 @@ You imagine sex with Tasha
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: DrinkEnergy {"position":"475,1475","size":"100,100"}
-<img height="500px" src="https://www.fmcgbusiness.co.nz/wp-content/uploads/2015/08/rsz_16dksh_and_red-bull-energy-drink-can-nz-open.jpg">
-
-
-Tasha didn't like it, but you feel yourself more confident.
-
-<<set $Moves += 1>>
-<<set $isTashaEnergyDrink = "false">>
-<<set $Dominance += 1>>
-<<set $Emotion -= 1>>
-
-[[OK|MainScene]]
-<<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
-
-
-:: DrinkLaxative {"position":"725,1225","size":"100,100"}
+:: DrinkLaxative [cp] {"position":"675,1250","size":"100,100"}
 <img height="500px" src="https://d2d8wwwkmhfcva.cloudfront.net/800x/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_ffe7bda6-e06a-4d5e-b058-0315a656ba6b.jpeg">
 
 You drank Laxative.
@@ -196,7 +194,7 @@ Weird choise.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: DrinkValocordin {"position":"500,1225","size":"100,100"}
+:: DrinkValocordin [cp] {"position":"550,1250","size":"100,100"}
 <img src="https://ixxilon.mauve.de/300/01741419_8.jpg">
 
 You drank Valocordin.
@@ -211,7 +209,7 @@ It takes some time to take an effect.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: EnergyDrink {"position":"175,1325","size":"100,100"}
+:: EnergyDrink {"position":"175,1300","size":"100,100"}
 <img height="500px" src="https://www.fmcgbusiness.co.nz/wp-content/uploads/2015/08/rsz_16dksh_and_red-bull-energy-drink-can-nz-open.jpg">
 
 
@@ -228,7 +226,7 @@ It takes some time to take an effect.
 <</if>>
 
 You may drink it by yourself.
-[[Drink it|DrinkEnergy]]
+[[Drink it|DarwinDrinksEnergy]]
 
 [[Do nothing|DoNothing]]
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
@@ -253,7 +251,7 @@ Tasha rejects
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: FuckAssYes {"position":"1975,775","size":"100,100"}
+:: FuckAssYes {"position":"2000,775","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1ORAJDI-gTndcF15Ehyb2hj-1kAQTBW8r">
 
 <<set $AchievementAnalFuck = 1>>
@@ -437,7 +435,7 @@ Achievements:
 <<if $AchievementDarwinDildo eq 1>> \
 	Double Penetration
 <</if>> \
-<<if $IsTashaJacketOn eq "true" and $IsTashaSkirtOn eq "true" and $IsDarvinShirtOn eq "true" and $IsDarvinPantsOn eq "true">> \
+<<if $IsTashaJacketOn eq "true" and $IsTashaSkirtOn eq "true" and $IsDarvinShirtOn eq "true" and $IsDarvinUnderpantsOn eq "true">> \
     Dandy. Did not take off anything.
 <</if>> \
 <<if $AchievementTashaDildo eq 1>> \
@@ -520,7 +518,6 @@ One of the items is long pink cylinder.
 
 /*Darwin*/
 <<set $IsCockStoned = "false">>
-<<set $IsDarvinPantsOn = "true">>
 <<set $IsDarvinShirtOn = "true">>
 <<set $IsDarvinUnderpantsOn = "true">>
 <<set $Dominance = 0>>
@@ -552,6 +549,8 @@ One of the items is long pink cylinder.
 <<set $IsDarwinValocordin = "false">>
 <<set $IsDarwinLaxative = "false">>
 <<set $isDarwinDrankLaxative = "false">>
+<<set $isTashaDrankLaxative = "false">>
+<<set $isTashaDrankValocordin = "false">>
 <<set $MovesGameOverDarwinLaxative = -1>>
 <<set $MovesGameOverTashaLaxative = -1>>
 
@@ -563,12 +562,13 @@ One of the items is long pink cylinder.
 <<set $TermoMax = 30>>
 <<set $MovesGameOverTermo = -1>>
 <<set $MovesTermoUndress = -1>>
+<<set $MovesTermoDrink = -1>>
 <<set $IsTermoEnabled = "true">>
 
 
 /*disable the termo if exceeded*/
 <<set $TermoCounter = 0 >>
-<<set $TermoCounterMax = 3 >>
+<<set $TermoCounterMax = 5 >>
 
 <<set $Moves = 0>>
 <<set $MovesMax = 35>>
@@ -782,7 +782,9 @@ Tasha rejects
     <<goto "GameOverDarwinValocordin">> \
 <</if>> \
 
-
+<<if $isTashaEnergyDrink eq "true" and $Termo gt $TermoBase and $Moves eq $MovesTermoDrink >> \
+    <<goto "TashaDrinksEnergy">> \
+<</if>> \
 
 <<if $IsTermoEnabled eq "true">>
     [[Inspect air conditioner controller|Termo]]
@@ -858,20 +860,20 @@ Tasha rejects
 [[Do nothing|DoNothing]]
 
 
-:: MedKit {"position":"425,1100","size":"100,100"}
-<img height="500px" src="https://www.medshop.com.my/cdn/shop/products/ELI00027_Elite_Bags_KIDLE_S_the_waist_leg_first-aid_kit_open_700x700.jpg">
+:: MedKit [cp art] {"position":"425,1100","size":"100,100"}
+<img height="500px" src="https://img.freepik.com/premium-photo/red-emergency-kit-is-open-box-medicine_882954-18893.jpg">
 
-<<if ($IsDarwinValocordin eq "false" and $IsDarwinDrankValocordin eq "false") or ($IsDarwinLaxative eq "false" and $isDarwinDrankLaxative eq "false")>>
+<<if ($IsDarwinValocordin eq "false" and $IsDarwinDrankValocordin eq "false" and $isTashaDrankValocordin eq "false") or ($IsDarwinLaxative eq "false" and $isDarwinDrankLaxative eq "false" and $isTashaDrankLaxative eq "false")>>
 You have found some drugs there.
 <<else>>
 	It's empty.
 <</if>>
 
-<<if $IsDarwinValocordin eq "false" and $IsDarwinDrankValocordin eq "false">>
+<<if $IsDarwinValocordin eq "false" and $IsDarwinDrankValocordin eq "false" and $isTashaDrankValocordin eq "false">>
 	[[Take Valocordin|TakeValocordin]]
 <</if>>
 
-<<if $IsDarwinLaxative eq "false" and $isDarwinDrankLaxative eq "false">>
+<<if $IsDarwinLaxative eq "false" and $isDarwinDrankLaxative eq "false" and $isTashaDrankLaxative eq "false">>
 	[[Take Laxative|TakeLaxative]]
 <</if>>
 
@@ -937,41 +939,38 @@ You've played with puzzle for a while.
 You have poured half of Valocordin into Energy Drink bottle.
 <<set $Moves += 1>>
 <<set $IsDarwinValocordin = "false">>
+<<set $isTashaDrankValocordin = "true">>
 <<set $IsPourHalf = "true">>
 
-  /*game over after random 2,3 moves*/
-  <<set $MovesGameOverTashaValocordin = $Moves + either(2,3)>>
-
-[[OK|TashaDrinks]]
+[[OK|MainScene]]
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: PourLaxative {"position":"350,1475","size":"100,100"}
+:: PourLaxative {"position":"300,1475","size":"100,100"}
 <img height="500px" src="https://www.fmcgbusiness.co.nz/wp-content/uploads/2015/08/rsz_16dksh_and_red-bull-energy-drink-can-nz-open.jpg">
 
 You have poured Laxative into Energy Drink bottle.
 <<set $Moves += 1>>
-<<set $IsDarwinLaxative eq "false">>
+<<set $IsDarwinLaxative = "false">>
+<<set $isTashaDrankLaxative = "true">>
 
   /*game over after random moves*/
   <<set $MovesGameOverTashaLaxative = $Moves + either(3,4,5)>>
 
-[[OK|TashaDrinks]]
+[[OK|MainScene]]
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: PourLittleValocordin {"position":"200,1475","size":"100,100"}
+:: PourLittleValocordin {"position":"125,1475","size":"100,100"}
 <img height="500px" src="https://www.fmcgbusiness.co.nz/wp-content/uploads/2015/08/rsz_16dksh_and_red-bull-energy-drink-can-nz-open.jpg">
 
 You have poured a little of Valocordin into Energy Drink bottle.
 <<set $Moves += 1>>
 <<set $IsDarwinValocordin = "false">>
+<<set $isTashaDrankValocordin = "true">>
 <<set $IsPourLittle = "true">>
 
-  /*boost emotion after random 2,3 moves*/
-  <<set  $MovesValocordinBoost = $Moves + either(2,3)>>
-
-[[OK|TashaDrinks]]
+[[OK|MainScene]]
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
@@ -1118,7 +1117,7 @@ She liked your ass.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: TakeLaxative {"position":"725,1100","size":"100,100"}
+:: TakeLaxative [cp] {"position":"725,1100","size":"100,100"}
 <img height="500px" src="https://d2d8wwwkmhfcva.cloudfront.net/800x/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_ffe7bda6-e06a-4d5e-b058-0315a656ba6b.jpeg">
 
 You took Laxative.
@@ -1139,25 +1138,6 @@ You took Laxative.
 You have took off her panties.
 
 [[OK|MainScene]]
-
-
-:: TakeOffPants {"position":"1350,0","size":"100,100"}
-<img height="300px" src="https://sun9-5.userapi.com/impf/c639524/v639524246/4cdad/EKJTNipJt5Q.jpg?size=1280x1275&quality=96&sign=63253eefab5f408288979ab081dac4cf&c_uniq_tag=xPjVqwsWsjoZR0rxu6eQT5TfRE-9lSJZLoHfnJGv130&type=album">
-
-You've took off your pants
-
-<<set $Moves += 1>>
-<<set $IsDarvinPantsOn = "false">>
-
-<<if $Emotion gte $EmotionHorny>>
-	She observing with interest.
-<<else>>
-	She doesn't like it
-	<<set $Emotion -= 2>>
-<</if>>
-
-[[OK|MainScene]]
-<<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
 :: TakeOffShirt {"position":"1200,0","size":"100,100"}
@@ -1263,7 +1243,7 @@ You have took off her top.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: TakeOffUnderpants {"position":"1475,0","size":"100,100"}
+:: TakeOffUnderpants {"position":"1400,25","size":"100,100"}
 <img height="500px" src="https://www.calvinklein.com.au/media/wysiwyg/615x750__0009_NB2593_C5I_MO-TP-F1_000.jpg">
 
 You've took off your pants
@@ -1275,14 +1255,14 @@ You've took off your pants
 	She observing with interest.
 <<else>>
 	She doesn't like it
-	<<set $Emotion -= 4>>
+	<<set $Emotion -= 3>>
 <</if>>
 
 [[OK|MainScene]]
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: TakeValocordin {"position":"550,1100","size":"100,100"}
+:: TakeValocordin [cp] {"position":"550,1100","size":"100,100"}
 <img src="https://ixxilon.mauve.de/300/01741419_8.jpg">
 
 You took Valocordin.
@@ -1368,7 +1348,7 @@ You took Valocordin.
 [[Do nothing|DoNothing]]
 
 
-:: TashaDildoPussy {"position":"2175,500","size":"100,100"}
+:: TashaDildoPussy {"position":"2175,475","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1YIAFcqC30jIbLHqm8RcRgO3beKLAptlY">
 
 She is so hot. She took the pink cylinder from the floor and started masturbate.
@@ -1383,11 +1363,30 @@ She is so hot. She took the pink cylinder from the floor and started masturbate.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: TashaDrinks {"position":"100,1600","size":"100,100"}
+:: TashaDrinksEnergy {"position":"400,1625","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1yz_yM4wRMIaZgpIPVF4ftk8wNiNihkIg">
 
 
-It takes some time to take an effect.
+Tasha drinks energy drink
+
+<<if $isTashaDrankLaxative eq "true">>
+
+    <<set $MovesGameOverTashaLaxative = $Moves + either(3,4,5)>>
+
+<</if>>
+
+<<if $isTashaDrankValocordin eq "true">>
+    <<if $IsPourLittle eq "true">>
+        /*boost emotion after random 2,3 moves*/
+        <<set  $MovesValocordinBoost = $Moves + either(2,3)>>
+    <</if>>
+    
+    <<if $IsPourHalf eq "true">>
+        /*game over after random 2,3 moves*/
+        <<set $MovesGameOverTashaValocordin = $Moves + either(2,3)>>
+    <</if>>
+
+<</if>>
 
 <<set $isTashaEnergyDrink = "false">>
 [[OK|MainScene]]
@@ -1429,7 +1428,7 @@ It's really hot here. Tasha took off her jacket.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: TashaValocordinBoost {"position":"225,25","size":"100,100"}
+:: TashaValocordinBoost {"position":"250,25","size":"100,100"}
 It looks like Valocordin took action. Tasha seems more relaxed. Nice job!
 
 [[OK|MainScene]] 
@@ -1475,6 +1474,7 @@ It requers some time to take an effect.
 /*Reset undress event  */
 <<if $Termo lte $TermoBase>>
 	<<set $MovesTermoUndress = -1>>
+    <<set $MovesTermoDrink = -1>>
 <</if>>
 
 /*reset the game over flag*/
@@ -1496,7 +1496,8 @@ It requers some time to take an effect.
 
 /*Trigger undress event after some moves, not immediate */
 <<if $Termo gt $TermoBase>>
-  <<set $MovesTermoUndress = $Moves + either(2,3)>>
+  <<set $MovesTermoUndress = $Moves + either(4,5)>>
+  <<set $MovesTermoDrink = $Moves + either(2,3)>>
 <</if>>
 
 /*Trigger game over after some moves, not immediate*/
@@ -1504,8 +1505,9 @@ It requers some time to take an effect.
   /*game over after random moves*/
   <<set $MovesGameOverTermo = $Moves + either(3,4,5)>>
   
-  /*reset Undress event*/
+  /*reset events*/
   <<set $MovesTermoUndress = -1>>
+  <<set $MovesTermoDrink = -1>>
 <</if>>
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
