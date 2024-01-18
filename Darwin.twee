@@ -572,6 +572,7 @@ One of the items is long pink cylinder.
 
 <<set $Moves = 0>>
 <<set $MovesMax = 35>>
+<<set $MovesMaxCage = 15>>
 
 /*Triggers*/
 <<set $TriggerCageOpen = 0>>
@@ -756,13 +757,14 @@ Tasha rejects
 <</if>>
 
 /*GAME OVER*/
-<<if $Moves gte $MovesMax>> \
+<<if $Moves gte $MovesMax or $Moves gte $MovesMaxCage>> \
     <<if $AchievementAnalFuck eq 1 or $AchievementPussyFuck eq 1 or $AchievementBJ eq 1>> \
         <<goto "HappyEnd">> \
     <<else>> \
         <<goto "GameOverMoves">> \
     <</if>> \
 <</if>> \
+
 <<if $MovesGameOverTermo eq $Moves >> \
     <<goto "GameOverTermo">> \
 <</if>> \
