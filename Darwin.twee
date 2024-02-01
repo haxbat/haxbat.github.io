@@ -17,13 +17,13 @@ Darwin
 }
 
 
-:: BlowJob [cp] {"position":"1300,275","size":"100,100"}
+:: BlowJob [cp] {"position":"1525,250","size":"100,100"}
 <img src="https://lh3.googleusercontent.com/d/1ke4CCQYt4QY9yG-Udv6XIgmWmx-eJ-Xd">
 
 <<set $Emotion += 1>>
 <<set $AchievementBJ = 1>>
 
-<<if  $IsDarvinUnderpantsOn eq "false" and $IsDarvinShirtOn eq "false">>
+<<if  $IsDarvinPantsOn eq "false" and $IsDarvinShirtOn eq "false">>
 	<<set $AchievementNakedKing =1>>
 <</if>>
 
@@ -33,7 +33,7 @@ She is sucking your dick
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: CageOpen [cp] {"position":"75,25","size":"100,100"}
+:: CageOpen [cp art] {"position":"75,25","size":"100,100"}
 Tasha has open the cage.
 You may interact with her now.
 
@@ -45,7 +45,7 @@ You may interact with her now.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: CockStoned [cp] {"position":"475,25","size":"100,100"}
+:: CockStoned [cp art] {"position":"475,0","size":"100,100"}
 <img height="300px" src="https://sun9-5.userapi.com/impf/c639524/v639524246/4cdad/EKJTNipJt5Q.jpg?size=1280x1275&quality=96&sign=63253eefab5f408288979ab081dac4cf&c_uniq_tag=xPjVqwsWsjoZR0rxu6eQT5TfRE-9lSJZLoHfnJGv130&type=album">
 
 Your cock is stoned. She noticed that.
@@ -83,14 +83,14 @@ Your cock is stoned. She noticed that.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: Darwin [cp] {"position":"1025,200","size":"100,100"}
+:: Darwin [cp] {"position":"900,225","size":"100,100"}
 <<if $AchievementDream eq 0>>
 	[[Dream about Tasha|DreamAboutTasha]]
 <<else>>
     [[Dream about Tasha|DreamAboutTashaSex]] 
 <</if>>
 
-<<if $IsCockStoned eq "true">>
+<<if $IsCockStoned eq "true" and  $AchievementBJ eq 0>>
     <<if $Emotion lt $EmotionHorny>>
         [[Jerk Off|JerkOffNo]]
     <<else>>
@@ -100,13 +100,26 @@ Your cock is stoned. She noticed that.
 
 /*Undress*/
 <<if $IsDarvinShirtOn eq "true">>
-	[[Take of Shirt|TakeOffShirt]]
+    <<if $IsTashaRobeOn eq "false" or $Emotion gte $EmotionHorny>>
+        [[Take of Shirt|TakeOffShirtYes]]
+    <<else>>
+        [[Take of Shirt|TakeOffShirtNo]]
+    <</if>>	
 <<else>>
-	[[Muscle play|MusclePlay]]
+    <<if  $Emotion lt $EmotionHot -1 >>
+        [[Muscle play|MusclePlayYes]]
+    <<else>>
+        [[Muscle play|MusclePlayNo]]
+    <</if>>    
+	
 <</if>>
 
-<<if $IsDarvinUnderpantsOn eq "true">>
-	[[Take off Underpants|TakeOffUnderpants]]
+<<if $IsDarvinPantsOn eq "true">>
+    <<if $Emotion gte $EmotionHorny>>
+        [[Take off Pants|TakeOffPantsYes]]
+    <<else>>
+        [[Take off Pants|TakeOffPantsNo]]
+    <</if>>
 <</if>>
 
 <<if $IsDarwinSedative eq "true">>
@@ -133,22 +146,33 @@ You did double penetration with the pink cylinder.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: DarwinDrinksEnergy [cp] {"position":"475,1475","size":"100,100"}
+:: DarwinDrinksEnergy [cp art] {"position":"475,1475","size":"100,100"}
 <img height="500px" src="https://www.fmcgbusiness.co.nz/wp-content/uploads/2015/08/rsz_16dksh_and_red-bull-energy-drink-can-nz-open.jpg">
 
 
 Tasha didn't like it, but you feel yourself more confident.
 
 <<set $Moves += 1>>
-<<set $isTashaEnergyDrink = "false">>
+<<set $isEnergyDrinkFull = "false">>
 <<set $Dominance += 1>>
 <<set $Emotion -= 1>>
+
+<<if $isEnergyDrinkHasFullSedative eq "true" or $isEnergyDrinkHasLittleSedative eq "true">>
+    <<set $IsDarwinDrankSedative = "true">>
+    <<set $MovesGameOverDarwinSedative = $Moves + either(3,4,5)>>
+<</if>>
+
+<<if $isEnergyDrinkHasLaxative eq "true">>
+    <<set $IsDarwinLaxative = "false">>
+    <<set $isDarwinDrankLaxative = "true">>
+    <<set $MovesGameOverDarwinLaxative = $Moves + either(3,4,5)>>
+<</if>>
 
 [[OK|MainScene]]
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: DoNothing [cp] {"position":"50,850","size":"100,100"}
+:: DoNothing [cp art] {"position":"50,850","size":"100,100"}
 Do nothing
 [[OK|MainScene]] 
 
@@ -156,7 +180,7 @@ Do nothing
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: DreamAboutTasha [cp] {"position":"700,125","size":"100,100"}
+:: DreamAboutTasha [cp art] {"position":"675,125","size":"100,100"}
 <<set $Moves += 1>>
 <<set $AchievementDream = 1>>
 
@@ -165,7 +189,7 @@ You imagine naked Tasha
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: DreamAboutTashaSex [cp] {"position":"675,0","size":"100,100"}
+:: DreamAboutTashaSex [cp art] {"position":"675,0","size":"100,100"}
 <<set $Moves += 1>>
 <<set $DreamBase += 1>>
 
@@ -179,7 +203,7 @@ You imagine sex with Tasha
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: DrinkLaxative [cp] {"position":"675,1250","size":"100,100"}
+:: DrinkLaxative [cp art] {"position":"675,1250","size":"100,100"}
 <img height="500px" src="https://d2d8wwwkmhfcva.cloudfront.net/800x/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_ffe7bda6-e06a-4d5e-b058-0315a656ba6b.jpeg">
 
 You drank Laxative.
@@ -195,7 +219,7 @@ Weird choise.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: DrinkSedative [cp] {"position":"550,1250","size":"100,100"}
+:: DrinkSedative [cp art] {"position":"550,1250","size":"100,100"}
 <img src="https://ixxilon.mauve.de/300/01741419_8.jpg">
 
 You drank Sedative.
@@ -210,7 +234,7 @@ It takes some time to take an effect.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: EnergyDrink [cp] {"position":"175,1300","size":"100,100"}
+:: EnergyDrink [cp art] {"position":"175,1300","size":"100,100"}
 <img height="500px" src="https://www.fmcgbusiness.co.nz/wp-content/uploads/2015/08/rsz_16dksh_and_red-bull-energy-drink-can-nz-open.jpg">
 
 
@@ -236,7 +260,7 @@ You may drink it by yourself.
 :: FuckAssNo [cp] {"position":"2000,625","size":"100,100"}
 <img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
 
-<<if $IsTashaJacketOn eq "false">>
+<<if $IsTashaRobeOn eq "false">>
 	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
     <<else>>
     <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
@@ -266,14 +290,14 @@ Tasha rejects
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: FuckFace [cp] {"position":"1300,150","size":"100,100"}
+:: FuckFace [cp] {"position":"1525,125","size":"100,100"}
 <img  src="https://lh3.googleusercontent.com/d/1e6ozN_dIQk6GAdVbukRCioM3meQmqtzf">
 
 Scene Blow
 <<set $Dominance += 1>>
 <<set $AchievementBJ = 1>>
 
-<<if  $IsDarvinUnderpantsOn eq "false" and $IsDarvinShirtOn eq "false">>
+<<if  $IsDarvinPantsOn eq "false" and $IsDarvinShirtOn eq "false">>
 	<<set $AchievementNakedKing =1>>
 <</if>>
 
@@ -284,7 +308,7 @@ Scene Blow
 :: FuckPussyNo [cp] {"position":"1700,650","size":"100,100"}
 <img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
 
-<<if $IsTashaJacketOn eq "false">>
+<<if $IsTashaRobeOn eq "false">>
 	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
     <<else>>
     <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
@@ -395,11 +419,11 @@ She felt sick and went home due to the high temperature in the room.
 
 <<set $Moves += 1>>
 
-<<if $Emotion gte $EmotionHappy & $IsTashaJacketOn eq "false" & $IsTashaMassage eq "true" >>
+<<if $Emotion gte $EmotionHappy & $IsTashaRobeOn eq "false" & $IsTashaMassage eq "true" >>
 	No reaction. Try something new.
 <</if>>
 
-<<if $Emotion gte $EmotionHappy & $IsTashaJacketOn eq "false" & $IsTashaMassage eq "false" >>
+<<if $Emotion gte $EmotionHappy & $IsTashaRobeOn eq "false" & $IsTashaMassage eq "false" >>
 	<<set $Emotion += 2>>
     <<set $IsTashaMassage = "true">>
 	You did gentle massage. She likes it a lot.
@@ -436,7 +460,7 @@ Achievements:
 <<if $AchievementDarwinDildo eq 1>> \
 	Double Penetration
 <</if>> \
-<<if $IsTashaJacketOn eq "true" and $IsTashaSkirtOn eq "true" and $IsDarvinShirtOn eq "true" and $IsDarvinUnderpantsOn eq "true">> \
+<<if $IsTashaRobeOn eq "true" and $IsTashaShortsOn eq "true" and $IsDarvinShirtOn eq "true" and $IsDarvinPantsOn eq "true">> \
     Dandy. Did not take off anything.
 <</if>> \
 <<if $AchievementTashaDildo eq 1>> \
@@ -448,7 +472,7 @@ Achievements:
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: InspectPuzzle [cp] {"position":"1875,75","size":"100,100"}
+:: InspectPuzzle [cp art] {"position":"1875,75","size":"100,100"}
 <img src="https://ir.ozone.ru/s3/multimedia-s/wc1000/6547288444.jpg"  height="500px">
 
 
@@ -467,11 +491,11 @@ One of the items is long pink cylinder.
 
 <<set $Moves += 1>>
 
-<<if $Emotion gte $EmotionHappy & $IsTashaJacketOn eq "false" & $IsTashaMassage eq "true" >>
+<<if $Emotion gte $EmotionHappy & $IsTashaRobeOn eq "false" & $IsTashaMassage eq "true" >>
 	No reaction. Try something new.
 <</if>>
 
-<<if $Emotion gte $EmotionHappy & $IsTashaJacketOn eq "false" & $IsTashaMassage eq "false" >>
+<<if $Emotion gte $EmotionHappy & $IsTashaRobeOn eq "false" & $IsTashaMassage eq "false" >>
 	<<set $Emotion += 1>>
     <<set $Dominance += 1>>
     <<set $IsTashaMassage = "true">>
@@ -508,19 +532,19 @@ One of the items is long pink cylinder.
 <<set $EmotionHot = 9>>
 <<set $EmotionHorny = 12>>
 <<set $EmotionOrgazm = 16>>
-<<set $IsTashaJacketOn = "true" >>
+<<set $IsTashaRobeOn = "true" >>
 <<set $IsTashaTopOn = "true">>
-<<set $IsTashaSkirtOn = "true">>
-<<set $IsTashaPantiesOn = "true">>
+<<set $IsTashaShortsOn = "true">>
+<<set $IsTashaShortsOn = "true">>
 <<set $IsTashaRubBonnerAss = "false" >>
 <<set $IsTashaMassage = "false">>
-<<set $isTashaEnergyDrink = "true">>
+<<set $isEnergyDrinkFull = "true">>
 <<set $Emotion = 5>>
 
 /*Darwin*/
 <<set $IsCockStoned = "false">>
 <<set $IsDarvinShirtOn = "true">>
-<<set $IsDarvinUnderpantsOn = "true">>
+<<set $IsDarvinPantsOn = "true">>
 <<set $Dominance = 0>>
 <<set $DominanceAnal = 5>>
 <<set $IsDarwinSedative = "false">>
@@ -542,25 +566,27 @@ One of the items is long pink cylinder.
 <<set $IsDildoEnabled = "false">>
 
 /*Drinks*/
-<<set $IsPourHalf = "false">>
-<<set $IsPourLittle = "false">>
+<<set $isEnergyDrinkHasFullSedative = "false">>
+<<set $isEnergyDrinkHasLittleSedative = "false">>
 <<set $MovesGameOverTashaSedative = -1>>
 <<set $MovesGameOverDarwinSedative = -1>>
 <<set $MovesSedativeBoost = -1>>
 <<set $IsDarwinSedative = "false">>
 <<set $IsDarwinLaxative = "false">>
 <<set $isDarwinDrankLaxative = "false">>
-<<set $isTashaDrankLaxative = "false">>
-<<set $isTashaDrankSedative = "false">>
+<<set $isEnergyDrinkHasLaxative = "false">>
+<<set $isEnergyDrinkHasSedative = "false">>
 <<set $MovesGameOverDarwinLaxative = -1>>
 <<set $MovesGameOverTashaLaxative = -1>>
 
-/* Temperature min = 10, max = 30, step is termo_step */
+/* Temperature */
 <<set $TermoBase= 20>>
 <<set $Termo = $TermoBase>>
-<<set $TermoStep = 5>>
-<<set $TermoMin = 15>>
-<<set $TermoMax = 30>>
+<<set $TermoStep = 3>>
+<<set $TermoMin = 17>>
+<<set $TermoMax = 29>>
+<<set $TermoDrink = 23>>
+<<set $TermoUndress = 26>>
 <<set $MovesGameOverTermo = -1>>
 <<set $MovesTermoUndress = -1>>
 <<set $MovesTermoDrink = -1>>
@@ -583,12 +609,12 @@ One of the items is long pink cylinder.
 <<if $DebugProgress eq "true">>
 <<set $Emotion = $EmotionHot>>
 <<set $isDarwinInCage = "false">>
-<<set $IsTashaJacketOn = "true">>
+<<set $IsTashaRobeOn = "true">>
 <<set $IsCockStoned = "true">>
 <</if>>
 
 
-:: IsInCage [cp] {"position":"300,25","size":"100,100"}
+:: IsInCage [cp art] {"position":"300,25","size":"100,100"}
 <<set $Moves += 1>>
 
 You need to get out from the cage first.
@@ -597,7 +623,7 @@ You need to get out from the cage first.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: JerkOffNo [cp] {"position":"1475,275","size":"100,100"}
+:: JerkOffNo [cp art] {"position":"1700,250","size":"100,100"}
 <<set $Moves += 1>>
 
 She went angry
@@ -607,7 +633,7 @@ She went angry
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: JerkOffYes [cp] {"position":"1475,150","size":"100,100"}
+:: JerkOffYes [cp art] {"position":"1700,125","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1AnAVpiMOxdT6JiczrBNgF0ec_HywKAo-">
 
 You have started jerking. She is waiting for your next move.
@@ -621,7 +647,7 @@ You have started jerking. She is waiting for your next move.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: KickPuzzle [cp] {"position":"2075,275","size":"100,100"}
+:: KickPuzzle [cp art] {"position":"2075,275","size":"100,100"}
 <img src="https://ir.ozone.ru/s3/multimedia-s/wc1000/6547288444.jpg"  height="500px">
 
 You've kick the bucket into the cage wall. Bricks are scattered around the room.
@@ -640,7 +666,7 @@ She doesn't like that.
 :: LickPussyNo [cp] {"position":"900,550","size":"100,100"}
 <img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
 
-<<if $IsTashaJacketOn eq "false">>
+<<if $IsTashaRobeOn eq "false">>
 	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
     <<else>>
     <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
@@ -670,7 +696,7 @@ She likes it.
 :: LickTitsNo [cp] {"position":"900,425","size":"100,100"}
 <img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
 
-<<if $IsTashaJacketOn eq "false">>
+<<if $IsTashaRobeOn eq "false">>
 	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
     <<else>>
     <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
@@ -711,7 +737,7 @@ Tasha rejects
 <<if $isDarwinInCage eq "true">>
 <img class="tasha" height="450px" src="https://lh3.googleusercontent.com/d/1TeTQUxKwWhJJ1P4ioZex8DUXz2GARuDx">
     <img class="tasha" src="https://lh3.googleusercontent.com/d/109WMqo32htdvArOATsXZwSj_KxH5q1VL">
-    <<if $IsTashaJacketOn eq "false">>
+    <<if $IsTashaRobeOn eq "false">>
         <img  class="tasha" src="https://lh3.googleusercontent.com/d/14b0EAealFwkwA6yOVxkC94WdtfAf8FCE">
     <<else>>
         <img  class="tasha" src="https://lh3.googleusercontent.com/d/11Qy-wv2yp19ZxZboZR99XU1GmBq4ZVpH">
@@ -723,19 +749,19 @@ Tasha rejects
         <<if $IsTashaTopOn eq "true">>
             <img  class="tasha" src="https://lh3.googleusercontent.com/d/1zZPsWSpz0bIyhUgD_dDF_2f7GR1MoYUY">
         <<else>>
-            <<if $IsTashaPantiesOn eq "true">>
+            <<if $IsTashaShortsOn eq "true">>
                 <img  class="tasha" src="https://lh3.googleusercontent.com/d/1xk-GnvqqHQvJB49jOc2KQ2CsN73sdM28">
             <</if>> 
         <</if>>
    <<else>>
         <img class="tasha" src="https://lh3.googleusercontent.com/d/1djJ4Du3Kc7mTcijMwv1SHILjBNrv8OOT">
-        <<if $IsTashaJacketOn eq "true">>
+        <<if $IsTashaRobeOn eq "true">>
             <img  class="tasha" src="https://lh3.googleusercontent.com/d/1Um0cCzRVZiT5VE1Lv1ZrGsmsEJR8ORTM">
         <<else>>
             <<if $IsTashaTopOn eq "true">>
                 <img  class="tasha" src="https://lh3.googleusercontent.com/d/17rnKWgQX2tqPCUbLGRnVnU5qRNGEosk-">
             <<else>>
-                <<if $IsTashaSkirtOn eq "true">>
+                <<if $IsTashaShortsOn eq "true">>
                     <img  class="tasha" src="https://lh3.googleusercontent.com/d/1XIgH0cMTifuwBn8aB2YzVYb8-Hzx5QWX">
                 <<else>>
                 None
@@ -745,7 +771,7 @@ Tasha rejects
    <</if>>
 <</if>>
 
-<<if $IsTashaJacketOn eq "false" and $IsTashaSkirtOn eq "false" and $IsTashaPantiesOn eq "false" and $IsTashaTopOn eq "false" and $IsCockStoned eq "false">> \
+<<if $IsTashaRobeOn eq "false" and $IsTashaShortsOn eq "false" and $IsTashaShortsOn eq "false" and $IsTashaTopOn eq "false" and $IsCockStoned eq "false">> \
     <<goto "CockStoned">>
 <</if>> \
 
@@ -785,7 +811,7 @@ Tasha rejects
     <<goto "GameOverDarwinSedative">> \
 <</if>> \
 
-<<if $isTashaEnergyDrink eq "true" and $Termo gt $TermoBase and $Moves eq $MovesTermoDrink >> \
+<<if $isEnergyDrinkFull eq "true" and $Termo gt $TermoBase and $Moves eq $MovesTermoDrink >> \
     <<goto "TashaDrinksEnergy">> \
 <</if>> \
 
@@ -802,7 +828,7 @@ Tasha rejects
     <</if>>
 [[Interact Darwin|Darwin]]
 [[Inspect Medical Kit|MedKit]]
-<<if $isTashaEnergyDrink eq "true">>
+<<if $isEnergyDrinkFull eq "true">>
     [[Interact with Energy Drink|EnergyDrink]]
 <</if>>
 [[Do nothing|DoNothing]]
@@ -853,7 +879,7 @@ Tasha rejects
 :: Massage [cp] {"position":"1350,700","size":"100,100"}
 <img height="300px" src="https://files.g8ozdcdn.com/wp-content/uploads/2019/09/e395758cf11b4c5a6b570eea82165e9c.jpeg" >
 
-<<if $IsTashaJacketOn eq "true">>
+<<if $IsTashaRobeOn eq "true">>
 	[[Do the massage|NormalMassage]]
 <<else>>
   [[Do the gentle massage|GentleMassage]]
@@ -866,17 +892,17 @@ Tasha rejects
 :: MedKit [cp art] {"position":"425,1100","size":"100,100"}
 <img height="500px" src="https://img.freepik.com/premium-photo/red-emergency-kit-is-open-box-medicine_882954-18893.jpg">
 
-<<if ($IsDarwinSedative eq "false" and $IsDarwinDrankSedative eq "false" and $isTashaDrankSedative eq "false") or ($IsDarwinLaxative eq "false" and $isDarwinDrankLaxative eq "false" and $isTashaDrankLaxative eq "false")>>
+<<if ($IsDarwinSedative eq "false" and $IsDarwinDrankSedative eq "false" and $isEnergyDrinkHasLittleSedative eq "false" and $isEnergyDrinkHasFullSedative eq "false") or ($IsDarwinLaxative eq "false" and $isDarwinDrankLaxative eq "false" and $isEnergyDrinkHasLaxative eq "false")>>
 You have found some drugs there.
 <<else>>
 	It's empty.
 <</if>>
 
-<<if $IsDarwinSedative eq "false" and $IsDarwinDrankSedative eq "false" and $isTashaDrankSedative eq "false">>
+<<if $IsDarwinSedative eq "false" and $IsDarwinDrankSedative eq "false" and $isEnergyDrinkHasLittleSedative eq "false" and $isEnergyDrinkHasFullSedative eq "false">>
 	[[Take Sedative|TakeSedative]]
 <</if>>
 
-<<if $IsDarwinLaxative eq "false" and $isDarwinDrankLaxative eq "false" and $isTashaDrankLaxative eq "false">>
+<<if $IsDarwinLaxative eq "false" and $isDarwinDrankLaxative eq "false" and $isEnergyDrinkHasLaxative eq "false">>
 	[[Take Laxative|TakeLaxative]]
 <</if>>
 
@@ -884,20 +910,27 @@ You have found some drugs there.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: MusclePlay [cp] {"position":"950,0","size":"100,100"}
+:: MusclePlayNo [art cp] {"position":"1050,175","size":"100,100"}
 <img src ="https://avz-clinic.com/wp-content/uploads/2019/07/news_17-min.jpg">
 You have played with your muscles.
 
 <<set $Moves += 1>>
 
+Looks like she ignores you. Try something new.
+  
+[[OK|MainScene]]
+<<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
-<<if  $Emotion lt $EmotionHot -1 >>
-	<<set $Emotion += 1>>
-    She likes it.
-<<else>>
-	Looks like she ignores you. Try something new.
-<</if>>    
-    
+
+:: MusclePlayYes [cp art] {"position":"1050,50","size":"100,100"}
+<img src ="https://avz-clinic.com/wp-content/uploads/2019/07/news_17-min.jpg">
+You have played with your muscles.
+
+<<set $Moves += 1>>
+
+<<set $Emotion += 1>>
+She likes it.
+
 [[OK|MainScene]]
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
@@ -925,7 +958,7 @@ You have played with your muscles.
 [[OK|MainScene]]
 
 
-:: PlayPuzzle [cp] {"position":"2075,0","size":"100,100"}
+:: PlayPuzzle [cp art] {"position":"2075,0","size":"100,100"}
 <img src="https://ir.ozone.ru/s3/multimedia-s/wc1000/6547288444.jpg"  height="500px">
 
 You've played with puzzle for a while.
@@ -936,51 +969,47 @@ You've played with puzzle for a while.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: PourFullSedative [cp] {"position":"0,1475","size":"100,100"}
+:: PourFullSedative [cp art] {"position":"0,1475","size":"100,100"}
 <img height="500px" src="https://www.fmcgbusiness.co.nz/wp-content/uploads/2015/08/rsz_16dksh_and_red-bull-energy-drink-can-nz-open.jpg">
 
 You have poured half of Sedative into Energy Drink bottle.
 <<set $Moves += 1>>
 <<set $IsDarwinSedative = "false">>
-<<set $isTashaDrankSedative = "true">>
-<<set $IsPourHalf = "true">>
+<<set $isEnergyDrinkHasFullSedative = "true">>
+
 
 [[OK|MainScene]]
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: PourLaxative [cp] {"position":"300,1475","size":"100,100"}
+:: PourLaxative [cp art] {"position":"300,1475","size":"100,100"}
 <img height="500px" src="https://www.fmcgbusiness.co.nz/wp-content/uploads/2015/08/rsz_16dksh_and_red-bull-energy-drink-can-nz-open.jpg">
 
 You have poured Laxative into Energy Drink bottle.
 <<set $Moves += 1>>
 <<set $IsDarwinLaxative = "false">>
-<<set $isTashaDrankLaxative = "true">>
-
-  /*game over after random moves*/
-  <<set $MovesGameOverTashaLaxative = $Moves + either(3,4,5)>>
+<<set $isEnergyDrinkHasLaxative = "true">>
 
 [[OK|MainScene]]
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: PourLittleSedative [cp] {"position":"125,1475","size":"100,100"}
+:: PourLittleSedative [cp art] {"position":"125,1475","size":"100,100"}
 <img height="500px" src="https://www.fmcgbusiness.co.nz/wp-content/uploads/2015/08/rsz_16dksh_and_red-bull-energy-drink-can-nz-open.jpg">
 
 You have poured a little of Sedative into Energy Drink bottle.
 <<set $Moves += 1>>
 <<set $IsDarwinSedative = "false">>
-<<set $isTashaDrankSedative = "true">>
-<<set $IsPourLittle = "true">>
+<<set $isEnergyDrinkHasLittleSedative = "true">>
 
 [[OK|MainScene]]
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: RipOffTashaPantiesNo [cp] {"position":"1175,1750","size":"100,100"}
+:: RipOffTashaShortsNo [cp art] {"position":"1175,1500","size":"100,100"}
 <img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
 
-<<if $IsTashaJacketOn eq "false">>
+<<if $IsTashaRobeOn eq "false">>
 	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
     <<else>>
     <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
@@ -990,7 +1019,7 @@ You have poured a little of Sedative into Energy Drink bottle.
 
 
 
-She doesn't allow you rip off her panties.
+She doesn't allow you rip off her Shorts.
 
 <<set $Moves += 1>>
 <<set $Emotion -= 1>>
@@ -999,57 +1028,23 @@ She doesn't allow you rip off her panties.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: RipOffTashaPantiesYes [cp] {"position":"1050,1750","size":"100,100"}
+:: RipOffTashaShortsYes [cp] {"position":"1050,1500","size":"100,100"}
 <img  height="500px" src="https://lh3.googleusercontent.com/d/10viPsCQEbjsFMlW_YfOTUN55MFjiN01E">
 
 <<set $Moves += 1>>
 <<set $Dominance += 1>>
 <<set $Emotion -= 1>>
-<<set $IsTashaPantiesOn = "false">>
+<<set $IsTashaShortsOn = "false">>
 
-You have ripped her panties.
+You have ripped her Shorts.
 
 [[OK|MainScene]]
 
 
-:: RipOffTashaSkirtNo [cp] {"position":"1175,1475","size":"100,100"}
+:: RipOffTashaTopNo [cp art] {"position":"1175,1225","size":"100,100"}
 <img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
 
-<<if $IsTashaJacketOn eq "false">>
-	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
-    <<else>>
-    <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
-<</if>>
-
-
-
-
-
-She doesn't allow you rip off her top.
-
-<<set $Moves += 1>>
-<<set $Emotion -= 1>>
-
-[[OK|MainScene]]
-<<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
-
-
-:: RipOffTashaSkirtYes [cp] {"position":"1050,1475","size":"100,100"}
-You have riped off her skirt.
-
-<<set $Moves += 1>>
-<<set $IsTashaSkirtOn = "false">>
-<<set $Dominance += 1>>
-<<set $Emotion -= 1>>
-
-[[OK|MainScene]]
-<<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
-
-
-:: RipOffTashaTopNo [cp] {"position":"1175,1225","size":"100,100"}
-<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
-
-<<if $IsTashaJacketOn eq "false">>
+<<if $IsTashaRobeOn eq "false">>
 	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
     <<else>>
     <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
@@ -1080,10 +1075,10 @@ You have riped off her top.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: RubBonnerAssNo [cp] {"position":"1700,375","size":"100,100"}
+:: RubBonnerAssNo [cp art] {"position":"1700,400","size":"100,100"}
 <img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
 
-<<if $IsTashaJacketOn eq "false">>
+<<if $IsTashaRobeOn eq "false">>
 	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
     <<else>>
     <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
@@ -1098,7 +1093,7 @@ Tasha rejects
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: RubBonnerAssYes [cp] {"position":"1700,500","size":"100,100"}
+:: RubBonnerAssYes [cp] {"position":"1525,400","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1hgUymNyjEkAOfQ1_QXZUuFlaj_Wb7sB9">
 <<set $Moves += 1>>
 
@@ -1113,7 +1108,7 @@ Tasha rejects
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: RubPanties [cp] {"position":"1350,1075","size":"100,100"}
+:: RubShorts [cp] {"position":"1350,1075","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1hgUymNyjEkAOfQ1_QXZUuFlaj_Wb7sB9">
 
 <<set $Moves += 1>>
@@ -1128,7 +1123,7 @@ Tasha rejects
 [[OK|MainScene]]
 
 
-:: ShelfPuzzle [cp] {"position":"2075,125","size":"100,100"}
+:: ShelfPuzzle [cp art] {"position":"2075,125","size":"100,100"}
 <img height="500px" src="https://tagrey.files.wordpress.com/2013/10/bigstock-young-man-in-jeans-standing-fa-7625193.jpg">
 
 <<set $IsPuzzleEnabled = "false">>
@@ -1142,7 +1137,7 @@ She liked your ass.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: TakeLaxative [cp] {"position":"725,1100","size":"100,100"}
+:: TakeLaxative [cp art] {"position":"725,1100","size":"100,100"}
 <img height="500px" src="https://d2d8wwwkmhfcva.cloudfront.net/800x/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_ffe7bda6-e06a-4d5e-b058-0315a656ba6b.jpeg">
 
 You took Laxative.
@@ -1154,27 +1149,65 @@ You took Laxative.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: TakeOffShirt [cp] {"position":"1175,0","size":"100,100"}
+:: TakeOffPantsNo [art cp] {"position":"1350,175","size":"100,100"}
+<img height="500px" src="https://www.calvinklein.com.au/media/wysiwyg/615x750__0009_NB2593_C5I_MO-TP-F1_000.jpg">
+
+You've took off your pants
+
+<<set $Moves += 1>>
+<<set $IsDarvinPantsOn = "false">>
+
+She doesn't like it
+<<set $Emotion -= 5>>
+
+[[OK|MainScene]]
+<<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
+
+
+:: TakeOffPantsYes [cp] {"position":"1350,50","size":"100,100"}
+<img height="500px" src="https://www.calvinklein.com.au/media/wysiwyg/615x750__0009_NB2593_C5I_MO-TP-F1_000.jpg">
+
+You've took off your pants
+
+<<set $Moves += 1>>
+<<set $IsDarvinPantsOn = "false">>
+
+She observing with interest.
+
+[[OK|MainScene]]
+<<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
+
+
+:: TakeOffShirtNo [art cp] {"position":"1200,175","size":"100,100"}
 <img src ="https://avz-clinic.com/wp-content/uploads/2019/07/news_17-min.jpg">
 You showed breast
 
 <<set $Moves += 1>>
 <<set $IsDarvinShirtOn = "false">>
 
-<<if $IsTashaJacketOn eq "false" or $Emotion gte $EmotionHorny>>
-	She observing with interest.
-    <<set $Emotion += 1>>
-<<else>>
 	She doesn't like it. There were no reasons for that move from your side.
 	<<set $Emotion -= 1>>
-<</if>>
 
 [[OK|MainScene]]
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: TakeOffTashaJacketNo [cp] {"position":"1025,775","size":"100,100"}
-She doen't allow you take off her jacket.
+:: TakeOffShirtYes [cp art] {"position":"1200,50","size":"100,100"}
+<img src ="https://avz-clinic.com/wp-content/uploads/2019/07/news_17-min.jpg">
+You showed breast
+
+<<set $Moves += 1>>
+<<set $IsDarvinShirtOn = "false">>
+
+She observing with interest.
+<<set $Emotion += 1>>
+
+[[OK|MainScene]]
+<<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
+
+
+:: TakeOffTashaRobeNo [cp] {"position":"1025,775","size":"100,100"}
+She doen't allow you take off her Robe.
 
 <<set $Moves += 1>>
 <<set $Emotion -= 1>>
@@ -1183,20 +1216,20 @@ She doen't allow you take off her jacket.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: TakeOffTashaJacketYes [cp] {"position":"900,775","size":"100,100"}
-You have took off her jacket.
+:: TakeOffTashaRobeYes [cp] {"position":"900,775","size":"100,100"}
+You have took off her Robe.
 
 <<set $Moves += 1>>
-<<set $IsTashaJacketOn = "false">>
+<<set $IsTashaRobeOn = "false">>
 
 [[OK|MainScene]]
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: TakeOffTashaPantiesNo [cp] {"position":"1175,1625","size":"100,100"}
+:: TakeOffTashaShortsNo [cp art] {"position":"1175,1375","size":"100,100"}
 <img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
 
-<<if $IsTashaJacketOn eq "false">>
+<<if $IsTashaRobeOn eq "false">>
 	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
     <<else>>
     <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
@@ -1206,7 +1239,7 @@ You have took off her jacket.
 
 
 
-She doesn't allow you take off her panties.
+She doesn't allow you take off her Shorts.
 
 <<set $Moves += 1>>
 <<set $Emotion -= 1>>
@@ -1215,53 +1248,21 @@ She doesn't allow you take off her panties.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: TakeOffTashaPantiesYes [cp] {"position":"1050,1625","size":"100,100"}
+:: TakeOffTashaShortsYes [cp] {"position":"1050,1375","size":"100,100"}
 <img  height="700px" src="https://lh3.googleusercontent.com/d/10viPsCQEbjsFMlW_YfOTUN55MFjiN01E">
 
 <<set $Moves += 1>>
-<<set $IsTashaPantiesOn = "false">>
+<<set $IsTashaShortsOn = "false">>
 
-You have took off her panties.
+You have took off her Shorts.
 
 [[OK|MainScene]]
 
 
-:: TakeOffTashaSkirtNo [cp] {"position":"1175,1350","size":"100,100"}
+:: TakeOffTashaTopNo [cp art] {"position":"1175,1100","size":"100,100"}
 <img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
 
-<<if $IsTashaJacketOn eq "false">>
-	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
-    <<else>>
-    <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
-<</if>>
-
-
-
-
-
-She doesn't allow you take off her skirt.
-
-<<set $Moves += 1>>
-<<set $Emotion -= 1>>
-
-[[OK|MainScene]]
-<<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
-
-
-:: TakeOffTashaSkirtYes [cp] {"position":"1050,1350","size":"100,100"}
-You have took off her Skirt.
-
-<<set $Moves += 1>>
-<<set $IsTashaSkirtOn = "false">>
-
-[[OK|MainScene]]
-<<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
-
-
-:: TakeOffTashaTopNo [cp] {"position":"1175,1100","size":"100,100"}
-<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1xAdCBvF93Z8fn3ZeK9OZ_g7Ya3h5wztS">
-
-<<if $IsTashaJacketOn eq "false">>
+<<if $IsTashaRobeOn eq "false">>
 	<img  class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1DAvSGW7Q9IcwzcSTZRlbpLBxQS3XqM8E">
     <<else>>
     <img   class="tasha" height="300px" src="https://lh3.googleusercontent.com/d/1ljMzZhTZKyIMSFI0v9nITUNjlKf7tiqS">
@@ -1291,26 +1292,7 @@ You have took off her top.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: TakeOffUnderpants [cp] {"position":"1400,25","size":"100,100"}
-<img height="500px" src="https://www.calvinklein.com.au/media/wysiwyg/615x750__0009_NB2593_C5I_MO-TP-F1_000.jpg">
-
-You've took off your pants
-
-<<set $Moves += 1>>
-<<set $IsDarvinUnderpantsOn = "false">>
-
-<<if $Emotion gte $EmotionHorny>>
-	She observing with interest.
-<<else>>
-	She doesn't like it
-	<<set $Emotion -= 3>>
-<</if>>
-
-[[OK|MainScene]]
-<<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
-
-
-:: TakeSedative [cp] {"position":"550,1100","size":"100,100"}
+:: TakeSedative [cp art] {"position":"550,1100","size":"100,100"}
 <img src="https://ixxilon.mauve.de/300/01741419_8.jpg">
 
 You took Sedative.
@@ -1322,16 +1304,16 @@ You took Sedative.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: Tasha [cp] {"position":"1275,550","size":"100,100"}
-<<if $IsTashaJacketOn eq "true">> \
+:: Tasha [cp] {"position":"1275,525","size":"100,100"}
+<<if $IsTashaRobeOn eq "true">> \
   		<<if $Emotion gte $EmotionHot>> \
-      		[[Take off Jacket|TakeOffTashaJacketYes]]
+      		[[Take off Robe|TakeOffTashaRobeYes]]
         <<else>> \
-        	[[Take off Jacket|TakeOffTashaJacketNo]]
+        	[[Take off Robe|TakeOffTashaRobeNo]]
         <</if>> \
   <</if>> \
   
-  <<if $IsTashaJacketOn eq "false" and $IsTashaTopOn eq "true">> \
+  <<if $IsTashaRobeOn eq "false" and $IsTashaTopOn eq "true">> \
         <<if $Emotion gte $EmotionHot>> \
       		[[Take off Top|TakeOffTashaTopYes]]
             [[Rip off Top|RipOffTashaTopYes]]
@@ -1351,16 +1333,6 @@ You took Sedative.
   
   [[Massage]]
   
-  <<if $IsTashaSkirtOn eq "true">> \
-        <<if $Emotion gte $EmotionHot>> \
-      		[[Take off Skirt|TakeOffTashaSkirtYes]]
-            [[Rip off Skirt|RipOffTashaSkirtYes]]
-        <<else>> \
-        	[[Take off Skirt|TakeOffTashaSkirtNo]]
-            [[Rip off Skirt|RipOffTashaSkirtNo]]
-        <</if>> \
-  <</if>> \
-
   <<if $IsCockStoned eq "true">> \
     <<if $Emotion gte $EmotionHot>> \
         [[Rub boner against her ass|RubBonnerAssYes]]
@@ -1379,17 +1351,17 @@ You took Sedative.
     <</if>> \
   <</if>> \
 
-  <<if $IsTashaPantiesOn eq "true" and $IsTashaSkirtOn eq "false">> \
-        [[Rub Panties|RubPanties]]
+  <<if $IsTashaShortsOn eq "true">> \
+        [[Rub Shorts|RubShorts]]
         <<if $Emotion gte $EmotionHot>> \
-      		[[Take off Panties|TakeOffTashaPantiesYes]]
-            [[Rip off Panties|RipOffTashaPantiesYes]]
+      		[[Take off Shorts|TakeOffTashaShortsYes]]
+            [[Rip off Shorts|RipOffTashaShortsYes]]
         <<else>> \
-        	[[Take off Panties|TakeOffTashaPantiesNo]]
-            [[Rip off Panties|RipOffTashaPantiesNo]]
+        	[[Take off Shorts|TakeOffTashaShortsNo]]
+            [[Rip off Shorts|RipOffTashaShortsNo]]
         <</if>> \
   <<else>> \
-      <<if $IsTashaPantiesOn eq "false">> \
+      <<if $IsTashaShortsOn eq "false">> \
         <<if $Emotion gte $EmotionHot>> \
             [[Lick pussy|LickPussyYes]]
         <<else>> \
@@ -1416,33 +1388,31 @@ She is so hot. She took the pink cylinder from the floor and started masturbate.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: TashaDrinksEnergy [cp] {"position":"400,1625","size":"100,100"}
+:: TashaDrinksEnergy [cp art] {"position":"400,1625","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1yz_yM4wRMIaZgpIPVF4ftk8wNiNihkIg">
 
 Tasha drinks energy drink
 
-<<if $isTashaDrankLaxative eq "true">>
+<<if $isEnergyDrinkHasLaxative eq "true">>
     <<set $MovesGameOverTashaLaxative = $Moves + either(3,4,5)>>
 <</if>>
 
-<<if $isTashaDrankSedative eq "true">>
-    <<if $IsPourLittle eq "true">>
-        /*boost emotion after random 2,3 moves*/
-        <<set  $MovesSedativeBoost = $Moves + either(2,3)>>
-    <</if>>
+<<if $isEnergyDrinkHasLittleSedative eq "true">>
+    /*boost emotion after random 2,3 moves*/
+    <<set  $MovesSedativeBoost = $Moves + either(2,3)>>
+ <</if>>
     
-    <<if $IsPourHalf eq "true">>
-        /*game over after random 2,3 moves*/
-        <<set $MovesGameOverTashaSedative = $Moves + either(2,3)>>
-    <</if>>
+<<if $isEnergyDrinkHasFullSedative eq "true">>
+    /*game over after random 2,3 moves*/
+    <<set $MovesGameOverTashaSedative = $Moves + either(2,3)>>
 <</if>>
 
-<<set $isTashaEnergyDrink = "false">>
+<<set $isEnergyDrinkFull = "false">>
 [[OK|MainScene]]
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: TashaOrgazm [cp] {"position":"1825,1300","size":"100,100"}
+:: TashaOrgazm [cp] {"position":"1850,1275","size":"100,100"}
 <img height="500px" src="https://lh3.googleusercontent.com/d/1TSAoQqt2xdV3smJbssyvChhVZ--GF5w4">
 
 She cumed!
@@ -1453,7 +1423,7 @@ She cumed!
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: TashaSedativeBoost [cp] {"position":"200,1625","size":"100,100"}
+:: TashaSedativeBoost [cp art] {"position":"200,1700","size":"100,100"}
 It looks like Sedative took action. Tasha seems more relaxed. Nice job!
 
 [[OK|MainScene]] 
@@ -1477,17 +1447,17 @@ She noticed your actions against the controller and switched it off
       <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: TashaTermoUndress [cp] {"position":"75,300","size":"100,100"}
-It's really hot here. Tasha took off her jacket.
+:: TashaTermoUndress [cp art] {"position":"75,275","size":"100,100"}
+It's really hot here. Tasha took off her Robe.
 
-<<set $IsTashaJacketOn = "false" >>
+<<set $IsTashaRobeOn = "false" >>
 <<set $TriggerTermoUndress = 1>>
 
 [[OK|MainScene]]
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: Termo [cp] {"position":"75,425","size":"100,100"}
+:: Termo [cp art] {"position":"50,425","size":"100,100"}
 Air conditioner controller.
 
 <<if $Termo gt $TermoMin>>
@@ -1508,7 +1478,7 @@ Temperature is on maximum
 
 
 
-:: TermoDecrease [cp] {"position":"225,625","size":"100,100"}
+:: TermoDecrease [cp art] {"position":"225,625","size":"100,100"}
 You have decreased the temperature at controller.
 It requers some time to take an effect.
 
@@ -1531,7 +1501,7 @@ It requers some time to take an effect.
 <<if $Debug eq "true">>DebugPage: <<print passage()>><</if>>
 
 
-:: TermoIncrease [cp] {"position":"75,625","size":"100,100"}
+:: TermoIncrease [cp art] {"position":"75,625","size":"100,100"}
 You have increased the temperature at controller.
 It requers some time to take an effect.
 
@@ -1543,10 +1513,14 @@ It requers some time to take an effect.
 <<set $TermoCounter += 1>>
 <<set $Termo = $Termo + $TermoStep>>
 
-/*Trigger undress event after some moves, not immediate */
-<<if $Termo gt $TermoBase>>
-  <<set $MovesTermoUndress = $Moves + either(4,5)>>
+/*Trigger drink event after some moves, not immediate */
+<<if $Termo eq $TermoDrink>>
   <<set $MovesTermoDrink = $Moves + either(2,3)>>
+<</if>>
+
+/*Trigger undress event after some moves, not immediate */
+<<if $Termo eq $TermoUndress>>
+  <<set $MovesTermoUndress = $Moves + either(2,3)>>
 <</if>>
 
 /*Trigger game over after some moves, not immediate*/
